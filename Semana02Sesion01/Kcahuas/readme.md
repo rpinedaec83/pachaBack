@@ -9,12 +9,14 @@ soy estudiante de la carrera de ingeniera informatica y quiero especializarme en
 *mysl server 1 proyecto
 
 
-## lenjuajes dominados
+## lenguajes dominados
 
 
 
 |          orden      |lenguaje                   |% conocimiento                       |
 |----------------|-------------------------------|-----------------------------|
-|java            |java                    |50%            |
-|Quotes          |python                  |10%            |
-|Dashes          |sql                     |30%
+|1               |java                    |50%            |
+|2               |python                  |10%            |
+|3               |sql                     |30%
+
+https://www.linkedin.com/in/keyen-enrique-cahuas-espinoza-8a6762217/
