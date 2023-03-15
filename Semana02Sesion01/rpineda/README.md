@@ -6,13 +6,17 @@ He trabajado en las siguientes empresas:
 - Mi Banco
 
     > Desarrollador en **Python**
+
     > Desarrollador en **Base de datos**
+
     > Desarrolador en *Azure*
 
 - ZegelIPAE
 
     > Desarrollo de **Backend**
+
     > Creacion de **CMR Academico**
+    
     > Creacion de **CRM Financiero**
 
 ## Lenguajes de Programacion
