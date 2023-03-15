@@ -1,6 +1,6 @@
 # HOLA SOY KEYEN CAHUAS	
 
-soy estudiante de la carrera de ingeniera informatica y quiero especializarme en devops, soy metodico, perseverante y paciente.
+soy estudiante de la carrera de ingeniera informatica y quiero especializarme en devops ademas soy metodico, perseverante y paciente.
 
 
 # proyectos realizados
