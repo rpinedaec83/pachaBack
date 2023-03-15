@@ -26,4 +26,4 @@ Gracias por leerme
 Saludos
 
 Roberto Pineda
-[x-codec.net](https://www.x-code.net)
+[x-codec.net](https://www.x-codec.net)
