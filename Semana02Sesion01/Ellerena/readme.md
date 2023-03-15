@@ -8,7 +8,7 @@ Conocimientos en ``front end`` y ``back end  ``
 |----------------|-------------------------------|-----------------------------|
 |1|Java|60%|
 |2|php|30%  |
-|3|sql |20%|
+|3|sql |30%|
 saludos 
 
 Enrique llerena(https://enriquellerena20.github.io/)
