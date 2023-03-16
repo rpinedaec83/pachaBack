@@ -22,6 +22,10 @@ He trabajado en las siguientes empresas:
 |3|`Java`|50%|
 
 Gracias por leerme
+
 Saludos
+
 Herless Acuña
+
+Visita mi pagina web:
 [github.io](https://herlessa.github.io)
