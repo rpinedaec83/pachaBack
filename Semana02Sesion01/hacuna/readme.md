@@ -21,7 +21,7 @@ He trabajado en las siguientes empresas:
 |2|	`SQL`            |90%           |
 |3|`Java`|50%|
 
-Gracias por leerme.
+Gracias por leerme
 Saludos
 Herless Acuña
 [github.io](https://herlessa.github.io)
