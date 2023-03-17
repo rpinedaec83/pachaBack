@@ -16,7 +16,7 @@ Algoritmo Calculadora
 		si	Operacion == "Resta" Entonces
 			Resultado = Numero1 - Numero2
 			Escribir "La resta de " Numero1 " menos " Numero2 " es " Resultado
-		sino 
+		sino
 			si	Operacion == "Multiplicacion" Entonces
 				Resultado = Numero1 * Numero2
 				Escribir "La multiplicacion de " Numero1 " por " Numero2 " es " Resultado
@@ -28,7 +28,5 @@ Algoritmo Calculadora
 			finsi
 		FinSi
 	FinSi
-	
-	
 FinAlgoritmo
 
