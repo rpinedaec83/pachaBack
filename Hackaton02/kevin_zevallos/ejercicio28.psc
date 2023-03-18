@@ -1,7 +1,7 @@
 Algoritmo ejercicio28
-	Escribir "Calculando la suma de los primeros cien números"
+	Escribir "Calculando la suma de los primeros cien n?meros"
 	
-	// Inicializamos la variable que contendrá la suma
+	// Inicializamos la variable que contendr? la suma
 	suma <- 0
 	i <-1
 	// Iniciamos el ciclo repetir desde 1 hasta 100
@@ -9,9 +9,9 @@ Algoritmo ejercicio28
 		
 		suma <- suma + i
 		i<-i+1
-	Hasta Que i=100
+	Hasta Que i=101
 	
 		// Mostramos el resultado
-		Escribir "La suma de los primeros cien números es:", suma
+		Escribir "La suma de los primeros cien n?meros es:", suma
 		
 FinAlgoritmo
