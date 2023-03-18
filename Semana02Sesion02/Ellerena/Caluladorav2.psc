@@ -3,7 +3,7 @@ Proceso Caluladorav2
 	numero2 = 0
 	operacion = 0
 	resultado = 0
-	
+	operacion2 = 0
 	Escribir  "Dame el primer numero "
 	Leer numero1
 	Escribir "Dame el segundo numero"
@@ -15,8 +15,8 @@ Proceso Caluladorav2
 	Escribir "Digita 3 para multiplicacion"
 	Escribir "Digita 4 para dividir"
 	
-	Leer  operacion
-	Segun operacion Hacer
+	Leer  operacion2
+	Segun operacion2 Hacer
 		1:
 			resultado = numero1 + numero2
 			Escribir "la suma de " numero1 " mas " numero2 " es " resultado

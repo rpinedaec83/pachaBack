@@ -10,6 +10,7 @@ Algoritmo Calculadora
 	Leer  numero2
 	Escribir "Dime la operacion q deseas realizar(suma,resta,multiplicacion,division)"
 	Leer  operacion
+	
 	si operacion = "suma" Entonces
 		resultado = numero1 + numero2
 		Escribir "la suma de " numero1 " mas " numero2 " es " resultado
