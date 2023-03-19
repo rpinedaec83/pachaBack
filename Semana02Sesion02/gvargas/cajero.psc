@@ -3,11 +3,11 @@ Algoritmo PiNilakantha
 	salcuen1 = 450
 	salcuen2 = 450
 	numcuen1 = 0
-	Escribir "Digite su numero de cuenta"
+	Escribir "Escriba su numero de cuenta"
 	Leer numcuen1
 	
-	Si numcuen1 == 456 Entonces
-		Mientras op <> 0 Hacer
+	Si numcuen1 = 456 Entonces
+		Mientras op = 0 Hacer
 			Escribir "Escoga la opcion"
 			Escribir "(0)Salir"
 			Escribir "(1)Retiro"
@@ -23,7 +23,7 @@ Algoritmo PiNilakantha
 					Leer monto
 					
 					Si monto > salcuen1 Entonces
-						Escribir "No cuenta con esa cantidad"
+						Escribir "Saldo insuficiente ingrese otra cantidad"
 					SiNo
 						salcuen1 = salcuen1 - monto
 						
@@ -39,7 +39,7 @@ Algoritmo PiNilakantha
 					Leer monto
 					
 					Si monto > salcuen11 Entonces
-						Escribir "No cuenta con esa cantidad"
+						Escribir "Saldo insuficiente ingrese otra cantidad"
 					SiNo
 						salcuen1 = salcuen1 - monto
 						salcuen2 = salcuen1 + monto
