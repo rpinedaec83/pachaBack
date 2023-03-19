@@ -1,4 +1,4 @@
-Algoritmo Algoritmo1
+Algoritmo Algoritmo3
 	num = 0
 	dig = 0
 	Escribir "Ingresar el número: "

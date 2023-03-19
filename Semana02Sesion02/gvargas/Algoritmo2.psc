@@ -1,4 +1,4 @@
-Algoritmo Algoritmo1
+Algoritmo Algoritmo2
 	num = 0
 	Escribir "Ingresar el número: "
 	Leer num
