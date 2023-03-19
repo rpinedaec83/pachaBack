@@ -1,1 +1,2 @@
 ## Algoritmos
+## cambios en pseudocodigo
