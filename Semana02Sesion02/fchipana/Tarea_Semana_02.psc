@@ -152,78 +152,144 @@ FinFuncion
 
 Funcion tarea_04()	
 	Escribir "4.    Hacer un algoritmo en Pseint que lea tres números enteros y los muestre de menor a mayor."
-	or1 = 0
-	or2 = 0
-	or3 = 0
+	Definir n1, n2, n3 Como Entero;
+	Escribir 'Ingrese tres números:';
+	Leer n1;
+	Leer n2;
+	Leer n3;
 	
-	escribir "Ingrese el primer numero: "
-	Leer n1
-	
-	escribir "Ingrese el segundo numero: "
-	Leer n2
-	si n2 >= n1 Entonces
-		or3 = or2	
-		or2 = or1
-		or1 = n2
-	SiNo
-		or3 = or2	
-		or2 = n2
-		or1 = or1
+	si (n1 < n2 y n1 < n3) entonces
+		si (n2 < n3)
+			Escribir n1," ", n2, " ", n3;
+		SiNo
+			Escribir n1," ", n3, " ",n2;
+		FinSi
 	FinSi
 	
-	escribir "Ingrese el tercer numero: "
-	Leer n3
-	si n2 >= n1 Entonces
-		or3 = or2	
-		or2 = or1
-		or1 = n2
-	SiNo
-		or3 = or2	
-		or2 = n2
-		or1 = or1
+	si (n2 < n1 y n2 < n3) Entonces
+		si (n1 < n3) Entonces
+			Escribir n2," ", n1," ", n3;
+		SiNo
+			Escribir n2," ", n3," ", n1;
+		FinSi
 	FinSi
 	
-	Escribir Sin Saltar "Ingrese la cantidad de datos a procesar: ";	
-	Leer N;	
-	dimension vector[N]		
-	Escribir "El vector original es:"; 	
-	para i <- 1 hasta N con paso 1 Hacer
-		vector[i] <-azar(1000);
-		Escribir sin Saltar vector[i] " ";	
-	FinPara
-	Escribir "";
-	
-	para i <- 1 hasta N con paso 1 Hacer       
+	si (n3 < n1 y n3 < n2) Entonces
+		si (n1 < n2)
+			Escribir n3," ", n1," ", n2;
+		SiNo
+			Escribir n3," ", n2," ", n1;
+		FinSi
+	FinSi
 		
-		min <- i;  	
-		Para j<-i+1 Hasta N Con Paso 1 Hacer           
-			Si vector[j] < vector[min] Entonces  //con < ordena ascendente, con > ordena descendente				
-				min <- j;				
-			Fin Si	
-		FinPara       
-		aux <- vector[i];
-		vector[i] <- vector[min];
-		vector[min] <- aux;       
-	FinPara
-	
-	
 FinFuncion	
 
 
 Funcion tarea_05()	
 	Escribir "5.    Hacer un algoritmo en Pseint para una tienda de zapatos que tiene una promoción de descuento para vender al mayor, esta dependerá del número de zapatos que se compren. Si son más de diez, se les dará un 10% de descuento sobre el total de la compra; si el número de zapatos es mayor de veinte pero menor de treinta, se le otorga un 20% de descuento; y si son más treinta zapatos se otorgará un 40% de descuento. El precio de cada zapato es de $80."
+	Definir nroZapatos,precio Como Entero;
+	precio <- 0;
+	
+	Escribir "Cantidad de Zapatos a comprar:";
+	Leer nroZapatos;
+	precio <- nroZapatos * 80;
+	
+	si (nroZapatos < 10) entonces
+		Escribir "No se aplica descuento. El precio total a pagar es: ", precio;
+	SiNo
+		si(nroZapatos < 20) entonces
+			Escribir "Se aplica descuento. El precio total a pagar es: ", precio - (precio * 0.1);
+		sino 
+			si(nroZapatos < 30) Entonces
+				Escribir " Se aplica descuento. El precio total a pagar es: ", precio - (precio * 0.2);
+			SiNo
+				Escribir "Se aplica descuento. El precio total a pagar es: ", precio - (precio * 0.4);
+			FinSi
+		FinSi
+	FinSi
 FinFuncion	
+
 Funcion tarea_06()	
 	Escribir "6.    Hacer un algoritmo en Pseint para ayudar a un trabajador a saber cuál será su sueldo semanal, se sabe que si trabaja 40 horas o menos, se le pagará $20 por hora, pero si trabaja más de 40 horas entonces las horas extras se le pagarán a $25 por hora."
+	Definir horasTrab, sueldo, horasExtra Como Entero;
+	horasExtra <- 0;
+	sueldo <- 0;
+	
+	Escribir "Ingresar horas trabajadas:";
+	Leer horasTrab;
+	
+	si (horasTrab < 40) entonces
+		sueldo <- horasTrab * 20;
+		Escribir "El sueldo que le corresponde esta semana es de: ",sueldo;
+	SiNo
+		horasExtra <- horasTrab - 40;
+		sueldo <- (horasTrab - horasExtra) * 20;
+		Escribir "El sueldo que le corresponde esta semana es de: ",sueldo + (horasExtra * 25);
+	FinSi
 FinFuncion	
+
 Funcion tarea_07()	
 	Escribir "7.    Hacer un algoritmo en Pseint para una tienda de helado que da un descuento por compra a sus clientes con membresía dependiendo de su tipo, sólo existen tres tipos de membresía, tipo A, tipo B y tipo C. Los descuentos son los siguientes:"
+	
+	Definir compra Como real;
+	Definir tipoCliente como caracter;
+	
+	Escribir "Ingresar el monto a comprar: ";
+	Leer compra;
+	Escribir "Ingresar el tipo de cliente: A, B, C ";
+	Leer tipoCliente;
+	
+	segun (tipoCliente) hacer
+		Caso 'A':
+			Escribir "Tipo de Cliente A";
+			Escribir "Total a pagar: ",(compra - (compra * 0.10));
+		Caso 'B':
+			Escribir "Tipo de Cliente B";
+			Escribir "Total a pagar: ",compra - (compra * 0.15);
+		Caso 'C':
+			Escribir "Tipo de Cliente C";
+			Escribir "Total a pagar: ",compra - (compra * 0.20);
+			
+		De Otro Modo:
+			Escribir "Total a pagar: ",compra;
+	FinSegun
+	
 FinFuncion	
+
 Funcion tarea_08()	
+	
 	Escribir "8.    Hacer un algoritmo en Pseint para calcular el promedio de tres notas y determinar si el estudiante aprobó o no."
+	Definir nota1, nota2, nota3, promedio Como Real;
+	promedio <- 0;
+	
+	Escribir "Recuerda que la mínima nota aprobatoria es 12";
+	Escribir "Ingresar sus 3 notas:";
+	Leer nota1, nota2, nota3;
+	
+	promedio <- (nota1 + nota2 + nota3) / 3;
+	
+	si (promedio >= 11.5) entonces
+		Escribir " Estudiante Aprobado";
+	SiNo
+		Escribir "Estudiante Reprobado";
+	FinSi
+	
 FinFuncion	
+
 Funcion tarea_09()	
 	Escribir "9.    Hacer un algoritmo en Pseint para determinar el aumento de un trabajador, se debe tomar en cuenta que si ganaba más de $2000 tendrá un aumento del 5%, si generaba menos de $2000 su aumento será de un 10%."
+	Definir sueldo Como Real;
+	
+	Escribir 'Ingresar su sueldo anterior';
+	
+	Leer sueldo;
+	
+	Si (sueldo<2000) Entonces
+		Escribir 'Su sueldo actual será de: ',sueldo+(sueldo*0.1);
+	SiNo
+		Escribir 'Su sueldo actual será de: ',sueldo+(sueldo*0.05);
+	FinSi
+	
 FinFuncion	
 
 Funcion tarea_10()	
@@ -307,7 +373,21 @@ FinFuncion
 
 Funcion tarea_14()	
 	Escribir "14. Hacer un algoritmo en Pseint que lea un entero positivo del 1 al diez y al 9 y determine si es un número primo."
+	Escribir "Ingresa un número del 1 al 10";
+	Leer num;
 	
+	si (num < 11 y num > 0) Entonces
+		Segun (num) hacer
+			caso 2: Escribir "El número es primo";
+			caso 3: Escribir "El número es primo";
+			caso 5: Escribir "El número es primo";
+			caso 7: Escribir "El número es primo";
+			De Otro Modo:
+				Escribir "El número no es primo";
+		FinSegun
+	SiNo
+		Escribir "No es un número del 1 al 10";
+	FinSi
 FinFuncion	
 
 Funcion tarea_15()	
