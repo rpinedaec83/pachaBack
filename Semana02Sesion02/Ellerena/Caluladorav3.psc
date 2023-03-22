@@ -14,7 +14,7 @@ Proceso Caluladorav3
 	Escribir "Dime la operacion q deseas realizar"
 	Escribir "Digita 1 para suma"
 	Escribir "Digita 2 para resta"
-	Escribir "Digita 3 para multiplicacion"
+	Escribir "Digita 3 para multiplicar"
 	Escribir "Digita 4 para dividir"
 	Escribir "Digita 0 para salir"
 	Leer  operacion
