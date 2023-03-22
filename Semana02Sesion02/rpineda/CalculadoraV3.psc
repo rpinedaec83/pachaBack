@@ -3,9 +3,9 @@ Proceso CalculadoraV3
 	Numero2 = 0
 	Operacion = 9
 	Resultado = 0
-	
+
 	Mientras Operacion<>0 Hacer
-		
+
 		Escribir "Dame el primer numero"
 		leer Numero1
 		Escribir "Dame el segundo numero"
