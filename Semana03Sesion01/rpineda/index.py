@@ -53,13 +53,13 @@ print(str(A > B) or (B < 0))
 
 vuelta = 1
 while vuelta < 100:
-   print("Vuelta: "+ str(vuelta))
-   vuelta = vuelta + 1
+    print("Vuelta: "+ str(vuelta))
+vuelta = vuelta + 1
 
 for vuelta in range(100,1,-5):
     print("Vuelta:" +str(vuelta))
 
-LISTAS
+#LISTAS
 
 numeros = [1,2,3,4,5,6,7]
 palabras = ["Hola", "como", 'estas']
