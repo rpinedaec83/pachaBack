@@ -127,15 +127,89 @@ def ejercicio15():
     print(f'{centimetros} centímetros a pulgadas : {pulgadas}')
     print(f'{libras} libras a kilogramos : {kilogramos}')
 def ejercicio16():
-    pass
+    rango_dias=[1,2,3,4,5,6,7]
+    dias_diccionario = {1:'lunes',2:'martes',3:'miércoles',4:'jueves',5:'viernes',6:'sábado',7:'domingo'}
+    dia = int(input('ingrese el número de día: '))
+    if dia in rango_dias:
+        print(f'dia {dia} corresponde a {dias_diccionario[dia]}')
+    else:
+        print('número de día no válido')
 def ejercicio17():
-    pass
+    hora = input("Ingrese la hora en formato HH:MM:SS: ")
+    horas, minutos, segundos = map(int, hora.split(':'))
+    segundos += 1
+
+    if segundos == 60:
+        segundos = 0
+        minutos += 1
+        if minutos == 60:
+            minutos = 0
+            horas += 1
+            if horas == 24:
+                horas = 0
+
+    nueva_hora = f"{horas:02d}:{minutos:02d}:{segundos:02d}"
+    print("La hora después de un segundo es:", nueva_hora)
 def ejercicio18():
-    pass
+    precio = 0
+    cantidad = int(input("Ingrese la cantidad de CD vírgenes a comprar: "))
+    if cantidad < 10:
+        precio = cantidad * 10
+    elif 10 <= cantidad & cantidad < 100:
+        precio = cantidad * 8
+    elif 100 <=cantidad & cantidad < 500:
+        precio = cantidad * 7
+    else:
+        precio = cantidad * 6
+    print(f"El precio a pagar por {cantidad} CD vírgenes es de ${precio}.")
 def ejercicio19():
-    pass
+    salarios = {56: "Cajero", 64: "Servidor", 80: "Preparador de mezclas", 48: "Mantenimiento"}
+    lista_identificador = [56,64,80,48]
+    identificador = int(input("Ingrese el número sueldo identificador del empleado: "))
+    dias_trabajados = int(input("Ingrese la cantidad de días que trabajó en la semana: "))
+    
+    if identificador in lista_identificador:
+        salario_diario = identificador
+        salario_semanal = dias_trabajados * salario_diario
+        print(f"El empleado {salarios[identificador]} (${salario_diario} por día) trabajó {dias_trabajados} días y debe recibir ${salario_semanal}.")
+    else:
+        print(f"No existe un empleado con el sueldo identificador {identificador}.")
+
 def ejercicio20():
-    pass
+    numeros = []
+
+    for i in range(4):
+        num = int(input("Ingrese un número entero positivo: "))
+        numeros.append(num)
+
+    pares = 0
+    for num in numeros:
+        if num % 2 == 0:
+            pares += 1
+
+    mayor = max(numeros)
+
+    if numeros[2] % 2 == 0:
+        segundo_cuadrado = numeros[1] ** 2
+    else:
+        segundo_cuadrado = None
+
+    if numeros[0] < numeros[3]:
+        media = sum(numeros) / 4
+    else:
+        media = None
+
+    if numeros[1] > numeros[2] and 50 <= numeros[2] <= 700:
+        suma = sum(numeros)
+    else:
+        suma = None
+
+
+    print("Cantidad de números pares:", pares)
+    print("Mayor número:", mayor)
+    print("Segundo número al cuadrado si el tercero es par:", segundo_cuadrado)
+    print("Media de los cuatro números si el primero es menor que el cuarto:", media)
+    print("Suma de los cuatro números si el segundo es mayor que el tercero y este está entre 50 y 700:", suma)
 def ejercicio21():
     pass
 def ejercicio22():
