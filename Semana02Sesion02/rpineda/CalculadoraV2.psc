@@ -29,6 +29,4 @@ Proceso CalculadoraV2
 		De Otro Modo:
 			Escribir "Opcion No Valida"
 	Fin Segun
-	
-	
 FinProceso
