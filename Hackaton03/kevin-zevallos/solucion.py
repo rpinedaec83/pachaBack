@@ -40,15 +40,57 @@ def ejercicio05():
     print(f"El precio total de la compra es: {precio_con_descuento} con descuento de {descuento}")
 
 def ejercicio06():
-    pass
+    horas_semanales = int(input('ingrese las horas trabajas en la semana: '))
+    horas_extra = horas_semanales-40
+    suelto_final = 0
+    if horas_semanales<=40:
+        sueldo_semanal = horas_semanales*25
+        sueldo_adicional=horas_extra*25
+        suelto_final = sueldo_semanal+sueldo_adicional
+    else:
+        sueldo_semanal = 40*25
+        sueldo_adicional = (horas_semanales-40)*25
+        suelto_final = sueldo_semanal+sueldo_adicional
+    print(f'las horas trabajadas en la semana son de {horas_semanales} y el sueldo es de : {suelto_final}')
 def ejercicio07():
-    pass
+    tipo_membresia = str(input('Ingrese el tipo de membresía: '))
+    tipo_membresia = tipo_membresia.upper()
+    descuento = ''
+    if tipo_membresia =='A':
+        descuento = '10%'
+        print(f'descuento correspondiente para membresía {tipo_membresia}: {descuento} ')
+    elif tipo_membresia == 'B':
+        descuento = '15%'
+        print(f'descuento correspondiente para membresía {tipo_membresia}: {descuento} ')
+    elif tipo_membresia == 'C':
+        descuento = '20%'
+        print(f'descuento correspondiente para membresía {tipo_membresia}: {descuento} ')
+    else:
+        print('tipo de membresía no válida.')
 def ejercicio08():
-    pass
+    nota1 = int(input('ingrese la primera nota: '))
+    nota2 = int(input('ingrese la segunda nota: '))
+    nota3 = int(input('ingrese la tercera nota: '))
+    promedio = round((nota1+nota2+nota3)/3,ndigits=2)
+    print(f'promedio: {promedio}')
+    if promedio >= 10.5:
+        print('el estudiante aprobó')
+    else:
+        print('el estudiante no aprobó')
 def ejercicio09():
-    pass
+    sueldo= int(input('ingrese sueldo de trabajador: '))
+    aumento = ''
+    if sueldo >= 2000:
+        aumento = '5%'
+    else:
+        aumento = '10%'
+    print(f'el aumento correspondiente para el sueldo de {sueldo} es de : {aumento}')
 def ejercicio10():
-    pass
+    numero = int(input('ingrese un número: '))
+    if numero % 2 == 0:
+        print(f'el número {numero} es par')
+    else:
+        print(f'el número {numero} es impar')
 def ejercicio11():
     pass
 def ejercicio12():
