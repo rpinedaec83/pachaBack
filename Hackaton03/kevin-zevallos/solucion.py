@@ -250,15 +250,51 @@ def ejercicio25():
     else:
         print('no está definido el factorial de números negativos')
 def ejercicio26():
-    pass
+    dividendo = int(input("Ingrese el dividendo: "))
+    divisor = int(input("Ingrese el divisor: "))
+
+    cociente = 0
+    resto = 0
+
+    while dividendo >= divisor:
+        dividendo -= divisor
+        cociente += 1
+
+    resto = dividendo
+
+    print("Cociente:", cociente)
+    print("Resto:", resto)
+
 def ejercicio27():
-    pass
+    numeros = []
+    numero = int(input("Ingrese un número positivo (o negativo para terminar): "))
+    while numero >= 0:
+        numeros.append(numero)
+        numero = int(input("Ingrese un número positivo (o negativo para terminar): "))
+
+    if len(numeros) > 0:
+        media = sum(numeros) / len(numeros)
+        print("La media es:", media)
+    else:
+        print("No se ingresaron números positivos.")
+
 def ejercicio28():
-    pass
+    suma = 0
+    for i in range(1, 101):
+        suma += i
+    print("La suma de los primeros cien números es:", suma)
 def ejercicio29():
-    pass
+    suma = 0
+    i = 1
+    while i <101:
+        suma += i
+        i+=1
+    print("La suma de los primeros cien números es:", suma)
 def ejercicio30():
-    pass
+    suma = 0
+    for i in range(1, 101):
+        suma += i
+    print("La suma de los primeros cien números es:", suma)
 def ejercicio31():
     pass
 def ejercicio32():
