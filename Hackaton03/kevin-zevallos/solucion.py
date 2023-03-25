@@ -296,15 +296,80 @@ def ejercicio30():
         suma += i
     print("La suma de los primeros cien números es:", suma)
 def ejercicio31():
-    pass
+    numeros = []
+    pares = []
+    impares = []
+
+    for i in range(10):
+        num = int(input("Ingrese un número: "))
+        numeros.append(num)
+        if num % 2 == 0:
+            pares.append(num)
+        else:
+            impares.append(num)
+
+        if len(pares) > 0:
+            media_pares = sum(pares) / len(pares)
+            print("La media de los números pares es:", media_pares)
+        else:
+            print("No se ingresaron números pares.")
+
+        if len(impares) > 0:
+            media_impares = sum(impares) / len(impares)
+            print("La media de los números impares es:", media_impares)
+        else:
+            print("No se ingresaron números impares.")
 def ejercicio32():
-    pass
+    ciudades = [
+        {'nombre': 'Lambayeque', 'poblacion': 60870},
+        {'nombre': 'Motupe', 'poblacion': 16738 },
+        {'nombre': 'Olmos', 'poblacion': 15205},
+        {'nombre': 'San José', 'poblacion': 10686}, #ciudades Lambayeque
+        {'nombre': 'Lima', 'poblacion': 10113318}, 
+        {'nombre': 'Nauta', 'poblacion': 29963}, #ciudades Loreto
+        {'nombre': 'Trompeteros', 'poblacion': 8396},
+        {'nombre': 'Tigre', 'poblacion': 6448},
+        {'nombre': 'Parinari', 'poblacion': 6085},
+        {'nombre': 'Urarinas', 'poblacion': 11545},
+        {'nombre': 'Iquitos', 'poblacion':377609}
+    ]
+    poblacion_maxima = 0
+    ciudad_con_max_poblacion = ""
+    for ciudad in ciudades:
+        poblacion = ciudad['poblacion']
+        if poblacion > poblacion_maxima:
+            poblacion_maxima = poblacion
+            ciudad_con_max_poblacion = ciudad['nombre']
+
+    print(f"La ciudad con la población más alta es {ciudad_con_max_poblacion} con {poblacion_maxima} habitantes.")
+
 def ejercicio33():
-    pass
+    continuar = True
+
+    while continuar:
+        print("Hola, ¿qué quieres hacer?")
+        
+        respuesta = input("¿Quieres continuar? (s/n): ")
+        if respuesta == "n":
+            continuar = False
 def ejercicio34():
-    pass
+    for i in range(1, 10):
+        print(f"Tabla de multiplicar del {i}")
+        for j in range(1, 11):
+            print(f"{i} x {j} = {i*j}")
+        print("")
+
 def ejercicio35():
-    pass
+    numeros = []
+    for i in range(20):
+        num = int(input("Ingrese un número: "))
+        numeros.append(num)
+
+    mayor = max(numeros)
+    menor = min(numeros)
+
+    print("El número mayor es:", mayor)
+    print("El número menor es:", menor)
 def ejercicio36():
     pass
 def ejercicio37():
