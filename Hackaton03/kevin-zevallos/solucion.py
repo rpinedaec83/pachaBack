@@ -92,15 +92,40 @@ def ejercicio10():
     else:
         print(f'el número {numero} es impar')
 def ejercicio11():
-    pass
+    print('ingrese 3 numeros: ')
+    n1 = int(input('número 1: '))
+    n2 = int(input('número 2: '))
+    n3 = int(input('número 3: '))
+    numeros = [n1,n2,n3]
+    maximo = max(numeros)
+    print(f'el mayor número es {maximo}')
 def ejercicio12():
-    pass
+    print('ingrese 2 numeros: ')
+    n1 = int(input('número 1: '))
+    n2 = int(input('número 2: '))
+    numeros = [n1,n2]
+    maximo = max(numeros)
+    print(f'el mayor número es {maximo}')
 def ejercicio13():
-    pass
+    vocales = ['a','e','i','o','u']
+    letra= str(input('ingrese una letra: '))
+    if letra in vocales:
+        print(f'la letra {letra} es una vocal')
+    else:
+        print(f'la letra {letra} no es una vocal')
 def ejercicio14():
-    pass
+    num = int(input("Ingrese un número del 1 al 10 o el 9: "))
+    if num == 2 or num == 3 or num == 5 or num == 7 or num == 9:
+        print("El número", num, "es primo.")
+    else:
+        print("El número", num, "no es primo.")
 def ejercicio15():
-    pass
+    centimetros=int(input('ingrese la cantidad de centímetros a convertir: '))
+    libras=int(input('ingrese la cantidad de libras a convertir: '))
+    pulgadas = centimetros*0.3937
+    kilogramos = libras*0.4535
+    print(f'{centimetros} centímetros a pulgadas : {pulgadas}')
+    print(f'{libras} libras a kilogramos : {kilogramos}')
 def ejercicio16():
     pass
 def ejercicio17():
