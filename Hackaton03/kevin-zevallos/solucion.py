@@ -371,12 +371,70 @@ def ejercicio35():
     print("El número mayor es:", mayor)
     print("El número menor es:", menor)
 def ejercicio36():
-    pass
+    n = int(input("Ingrese el número de términos que desea: "))
+    a, b = 0, 1
+    contador = 0
+
+    if n <= 0:
+        print("Ingrese un número positivo.")
+    elif n == 1:
+        print("La serie de Fibonacci hasta el término",n,":")
+        print(a)
+    else:
+        print("La serie de Fibonacci hasta el término",n,":")
+        while contador < n:
+            print(a)
+            c = a + b
+            a = b
+            b = c
+            contador += 1
 def ejercicio37():
-    pass
+    num1 = abs(int(input('ingrese el primer número: ')))
+    num2 = abs(int(input('ingrese el segundo número: ')))
+    print("El M.C.D. de", num1, "y", num2,"es ")
+    # Iteramos mientras el segundo número sea diferente de cero
+    while num2:
+        # Realizamos la división entera y obtenemos el resto
+        num1, num2 = num2, num1 % num2
+    
+    # El M.C.D. es el último divisor no nulo
+    mcd= num1
+    print(mcd)
 def ejercicio38():
-    pass
+    def es_perfecto(numero):
+        suma = 0
+        for divisor in range(1, numero):
+            if numero % divisor == 0:
+                suma += divisor
+        return suma == numero
+
+    numero = int(input("Ingrese un número: "))
+    if es_perfecto(numero):
+        print(numero, "es un número perfecto")
+    else:
+        print(numero, "no es un número perfecto")
 def ejercicio39():
-    pass
+    def approx_Leibniz(num_terms):
+        pi_approx = 0
+        sign = 1
+        for i in range(1, num_terms * 2, 2):
+            pi_approx += sign * (1 / i)
+            sign = -sign
+        return pi_approx * 4
+    pi_approx = approx_Leibniz(100)
+    print(pi_approx)
 def ejercicio40():
-    pass
+    def nilakantha_pi(n):
+        pi = 3
+        sign = 1
+        denom = 2
+        for i in range(n):
+            term = 4/(denom * (denom + 1) * (denom + 2))
+            pi += sign * term
+            sign *= -1
+            denom += 2
+        return pi
+
+    n_terms = int(input("Ingrese el número de términos para calcular pi: "))
+    pi_approx = nilakantha_pi(n_terms)
+    print(f"La aproximación de pi con {n_terms} términos es: {pi_approx}")
