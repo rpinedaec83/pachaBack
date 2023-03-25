@@ -211,15 +211,44 @@ def ejercicio20():
     print("Media de los cuatro números si el primero es menor que el cuarto:", media)
     print("Suma de los cuatro números si el segundo es mayor que el tercero y este está entre 50 y 700:", suma)
 def ejercicio21():
-    pass
+    num = int(input("Ingrese un número entero: "))
+
+    factorial = 1
+
+    if num < 0:
+        print("El factorial no está definido para números negativos.")
+    elif num == 0:
+        print("El factorial de 0 es 1.")
+    else:
+        for i in range(1, num+1):
+            factorial *= i
+        print("El factorial de", num, "es", factorial)
 def ejercicio22():
-    pass
+    n = int(input("Ingrese el valor de n: "))
+    suma = n*(n+1)/2
+    print("La suma de los", n, "primeros números es", suma)
 def ejercicio23():
-    pass
+    n = int(input("Ingrese el valor de n: "))
+    suma = 0
+    for i in range(1, n+1, 2):
+        suma += i
+    print("La suma de los números impares menores o iguales a", n, "es", suma)
 def ejercicio24():
-    pass
+    suma = 0
+    for i in range(0, 1001, 2):
+        suma += i
+
+    print("La suma de todos los números pares hasta el 1000 es:", suma)
 def ejercicio25():
-    pass
+    n = int(input("Introduce un número: "))
+    if n >=0:
+        factorial = 1
+        for i in range(1, n+1):
+            factorial *= i
+
+        print("El factorial de", n, "es", factorial)
+    else:
+        print('no está definido el factorial de números negativos')
 def ejercicio26():
     pass
 def ejercicio27():
