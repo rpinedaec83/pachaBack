@@ -1,0 +1,12 @@
+Algoritmo sin_titulo
+	//12.-Hacer un algoritmo en Pseint que lea dos números y diga cuál es el mayor.
+	Escribir 'Ingrese primer número';
+	Leer Num1
+	Escribir 'Ingrese segundo  número';
+	Leer Num2
+	Si (Num1 > Num2) Entonces
+		Escribir 'El mayor es: ', Num1;
+	sino 
+		Escribir 'El mayor es: ', Num2;
+	FinSi
+FinAlgoritmo
