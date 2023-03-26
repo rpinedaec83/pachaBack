@@ -72,7 +72,7 @@ while True:
         solucion.ejercicio33()
     elif opcion == 34:
         solucion.ejercicio34()
-    elif opcion == 40:
+    elif opcion == 35:
         solucion.ejercicio35()
     elif opcion == 36:
         solucion.ejercicio36()

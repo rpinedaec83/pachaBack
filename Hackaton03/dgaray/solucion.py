@@ -655,7 +655,7 @@ def ejercicio28():
 def ejercicio29():
     # Hacer un programa en Python para calcular la suma de los primeros cien números con un ciclo repetir.
     cantidad_numeros = 0
-    numeros= 1
+    numeros = 1
     suma = 0
     while True:
         if numeros >= 1 and numeros < 101:
@@ -699,10 +699,11 @@ def ejercicio31():
 def ejercicio33():
     # Hacer un programa en Python que permita al usuario continuar con el programa
     respuesta = None
-    while respuesta is None :
+    while respuesta is None:
         try:
             while True:
-                respuesta = input("Ingrese s para que continue y n para terminar: ")
+                respuesta = input(
+                    "Ingrese s para que continue y n para terminar: ")
                 if respuesta == 's':
                     print('se continua ejevutando')
                 else:
@@ -710,3 +711,121 @@ def ejercicio33():
                     break
         except ValueError:
             print("Solo numeros: ")
+
+
+def ejercicio34():
+    # Hacer un programa en Python que imprima la tabla de multiplicar de los números del uno nueve.
+    for multiplo in range(1, 11):
+        print(f'Tabla del {multiplo}')
+        print('**********************')
+        for mutiplicador in range(1, 11):
+            resultado = multiplo * mutiplicador
+            print(f'{multiplo} x {mutiplicador} = {resultado}')
+
+
+def ejercicio35():
+    # Hacer un programa en Python que nos permita saber cuál es el número mayor y menor, se debe ingresar sólo veinte números.
+    valor = None
+    while valor is None:
+        try:
+            lista = []
+            for i in range(1, 21):
+                valor = int(input(f'el numero {i} es: '))
+                lista.append(valor)
+            mayor = lista[0]
+            menor = lista[0]
+            for j in range(1, 19):
+                if lista[j] > mayor:
+                    mayor = lista[j]
+
+            for k in range(1, 19):
+                if lista[k] < menor:
+                    menor = lista[k]
+            print(f'el menor numero es {menor}')
+            print(f'el mayor numero es {mayor}')
+        except ValueError:
+            print("Solo numeros: ")
+
+
+def ejercicio36():
+    # 36. Hacer un programa en Python para calcular la serie de Fibonacci.
+    n = int(input("Ingrese el número de términos de la serie de Fibonacci: "))
+    a, b = 0, 1
+    contador = 0
+
+    while contador < n:
+        print(a)
+        a, b = b, a+b
+        contador += 1
+
+
+def ejercicio37():
+    # 37. Hacer un programa en Python para conseguir el M.C.D de un número por medio del algoritmo de Euclides.
+    a = 12392
+    b = 870
+    aux = 0
+    print("Ingresar Dos Numeros")
+    numero1 = int(input("Numero Uno "))
+    numero2 = int(input("Numero Dos "))
+    if (a < b):
+        aux = a
+        a = b
+    while (b != 0):
+        resto = a % b
+        a = b
+        b = resto
+    print(f"Resultado Final: {a}")
+
+
+def ejercicio38():
+    # 38. Hacer un programa en Python que nos permita saber si un número es un número perfecto.
+    acum = 0
+    num = None
+    while num is None:
+        try:
+            num = int(input("Ingresa un número para saber si es perfecto: "))
+
+            for i in range(1, num - 1, 1):
+                if num % i == 0:
+                    acum = acum + i
+            if num == acum:
+                print(f"{num} es perfecto")
+            else:
+                print(f"{num} No es perfecto")
+        except ValueError:
+            print(f"Ingresa solo números")
+
+
+def ejercicio39():
+    #  39. Hacer un programa en Python que cumpla con la aproximación del número pi con
+    #  la serie de Gregory-Leibniz. La formula que se debe aplicar es:
+    #  Pi = (4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...
+    n = int(input("Ingrese el número de términos para aproximar pi: "))
+
+    pi = 0
+    for i in range(n):
+        termino = 4/((2*i)+1)
+        if i % 2 == 0:
+            pi += termino
+        else:
+            pi -= termino
+
+    print("La aproximación de pi con", n, "términos es:", pi)
+
+
+def ejercicio40():
+    # 40. Hacer un programa en Python que cumpla con la aproximación del número pi con la serie de Nilakantha.
+    #  La formula que se debe aplicar es:
+    #     Pi = = 3 + 4/(2*3*4) - 4/(4*5*6) + 4/(6*7*8) - 4/(8*9*10) + 4/(10*11*12) - 4/(12*13*14)...
+    n = int(input("Ingrese el número de términos para aproximar pi: "))
+
+    pi = 3
+    denominador = 2
+    signo = 1
+    for i in range(n):
+        termino = 4/(denominador*(denominador+1)*(denominador+2))
+        pi += signo*termino
+        denominador += 2
+        signo *= -1
+
+    print("La aproximación de pi con", n, "términos es:", pi)
