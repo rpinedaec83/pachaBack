@@ -1,6 +1,10 @@
+<<<<<<< HEAD
+# Ejercicios Hackaton02 enumerados:
+=======
 # Cesar Beltran Alarcon
 
 ### Ejercicios Hackaton02 enumerados:
+>>>>>>> fuentes/main
 
 1) Hacer un algoritmo en Pseint que lea un número por el teclado y determinar si tiene tres dígitos.
 
