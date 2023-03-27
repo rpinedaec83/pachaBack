@@ -116,4 +116,5 @@ print(type(miDic))
 print(type(miTupla))
 print(type(personas))
 
-print(type(miDic["Edad"]))
+print(type(miDic["Edad"
+]))
