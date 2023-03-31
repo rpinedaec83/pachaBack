@@ -1,0 +1,1 @@
+[{"nombre": "David", "apellido": "Lopez", "edad": "27", "id": "27", "codigoCliente": "0002"}, {"nombre": "Roberto", "apellido": "Pineda", "edad": "39", "id": "39", "codigoCliente": "0001"}]
