@@ -1,1 +1,1 @@
-[{"nombre": "David", "apellido": "Lopez", "edad": "27", "id": "27", "codigoCliente": "0002"}, {"nombre": "Roberto", "apellido": "Pineda", "edad": "39", "id": "39", "codigoCliente": "0001"}]
+[{"nombre": "David", "apellido": "Lopez", "edad": "27", "id": "27", "codigoCliente": "0002"}, {"nombre": "Roberto", "apellido": "Pineda", "edad": "39", "id": "39", "codigoCliente": "0001"}, {"nombre": "Mari", "apellido": "R", "edad": "25", "id": "25", "codigoCliente": "123"}, {"nombre": "sa", "apellido": "sas", "edad": "12", "id": "12", "codigoCliente": "12"}]
