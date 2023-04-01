@@ -1,0 +1,4 @@
+
+Nombres: Herless Acuna, DNI: 41598748,Edad: 40,
+Notas: 10.0,12.0,15.0,17.0
+Maxima nota: 17.0, Minina nota: 10.0, Promedio: 13.5
