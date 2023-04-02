@@ -33,6 +33,7 @@ class Menu:
         self.nombreMenu = nombreMenu
         self.listaOpciones = listaOpciones
 
+
     def show(self):
         a = True
         while a:
@@ -156,6 +157,6 @@ while f:
             print("Lista de docentes ☑:")
 
             for docente in listaDocente:
-                print(f"|    DNI    | NOMBRE |  EDAD  |\n")
+                print(f"|    DNI    |  NOMBRE  |  EDAD  |\n")
                 print(f"| {docente.dni} | {docente.nombre} | {docente.edad} |")            
     break
