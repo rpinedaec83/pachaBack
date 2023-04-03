@@ -2,12 +2,12 @@ import os
 import shutil
 
 
-# # INI Manejo de Carpetas
+#  INI Manejo de Carpetas
 # directorioActual = os.getcwd()
 # print(directorioActual)
 
 # os.makedirs("MiPrimeraCarpeta")
-# #os.removedirs("MiPrimeraCarpeta")
+#os.removedirs("MiPrimeraCarpeta")
 
 # listaDirectorios = os.listdir('../..')
 
