@@ -1,0 +1,1 @@
+Alumno: Adriana, Nota Maxima: 12.0  Nota Minima: 12.0  Promedio: 14.75 
