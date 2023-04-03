@@ -1,0 +1,1 @@
+Alumno: Alonso, maxima nota: 20.0, minima nota: 16.0, promedio: 17.75
