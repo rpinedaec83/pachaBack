@@ -1,68 +1,68 @@
 import os
 import shutil
 
-
-#  INI Manejo de Carpetas
+# #Manejo de Carpetas
 # directorioActual = os.getcwd()
 # print(directorioActual)
 
-# os.makedirs("MiPrimeraCarpeta")
-#os.removedirs("MiPrimeraCarpeta")
+# os.makedirs("MiPrimeraCarpeta") #Crea carpeta
+# os.removedirs("MiPrimeraCarpeta") #Remueve la carpeta
+
+# listaDirectorios = os.listdir('.')
+# print(listaDirectorios) #Ver lista de directorios
+
+# listaDirectorios = os.listdir('..')
+# print(listaDirectorios)     #El nivel anterior de trabajo
 
 # listaDirectorios = os.listdir('../..')
+# print(listaDirectorios)     #Lista un array de todas las cosas que uno tiene en la carpeta Pachaback-1
+
+# listaDirectorios = os.listdir('../..')
+# listaDirectorios = os.listdir('.')
 
 # archivoOrigen = 'main.py'
 # directorioDestino = f"{directorioActual}/MiPrimeraCarpeta"
-# shutil.copy(archivoOrigen,directorioDestino)
+# shutil.copy(archivoOrigen, directorioDestino)
+# print(listaDirectorios)         #Copiar un archivo en una carpeta creada en linea 7
 
-# print(listaDirectorios)
-# #FIN
 
-# # INI Manejo de Archivos
+# #Manejo de archivos
 # try:
-#     archivo = open("data.txt",'r')
+#     archivo = open("data.txt", 'r')
 #     print(archivo.read())
 # except Exception as ex:
 #     print(ex)
 
 # try:
-#     archivo = open("data.txt",'r')
+#     archivo = open("data.txt", 'r')
 #     for linea in archivo.readlines():
-#         # if(linea == 'David'):
-#         #     print("Este es el Alterego")
 #         print(linea)
-# except Exception as ex:
-#     print(ex)
-
-# try:
-#     archivo = open("nombres.txt",'w')
-#     archivo.write("Lopez")
-# except Exception as ex:
-#     print(ex)
-
-
-# try:
-#     archivo = open("nombres.txt",'r')
 #     print(archivo.read())
 # except Exception as ex:
+#     print(ex)       #Escribe lo que esta en data.txt linea por linea
+
+
+# try:
+#     archivo = open("nombres.txt", 'w')
+#     archivo.write("Acuña")
+# except Exception as ex:
 #     print(ex)
 
 # try:
-#     archivo = open("nombres.txt",'a')
-#     archivo.write("Pineda")
+#     archivo = open("nombres.txt", 'a')
+#     archivo.write("Zavala")
 #     archivo.write("\n")
 # except Exception as ex:
 #     print(ex)
 
 # try:
-#     archivo = open("nombres.txt",'r')
+#     archivo = open("nombres.txt", 'r')
 #     print(archivo.read())
 # except Exception as ex:
 #     print(ex)
-# # FIN
 
 class Persona:
-    def __init__(self, nombre, apellido, edad, sexo):
+    def __init__(self, nombre, apellido, edad, sexo): 
         self.nombre = nombre
         self.apellido = apellido
         self.edad = edad
@@ -90,10 +90,9 @@ class Archivo:
             print(ex)
         else:
             file.close()
-            # print(file)
+            #print(file)            
 
-persona = Persona('Roberto','Pineda',39,'Masculino')
+persona = Persona('Herless', 'Acuña', 40, 'Masculino' )
 archivo = Archivo("miPersona.txt")
 archivo.agregarPersona(persona)
 archivo.mostrarArchivo()
-
