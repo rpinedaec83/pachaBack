@@ -21,17 +21,28 @@ class color:
 
 
 class Persona:
-    def __init__(self, nombre, apellido, edad, id):
+    def __init__(self, nombre, edad, dni):
         self.nombre = nombre
-        self.apellido = apellido
         self.edad = edad
-        self.id = id
+        self.dni = dni
 
 
-class Cliente(Persona):
-    def __init__(self, nombre, apellido, edad, id, codigoCliente):
-        super().__init__(nombre, apellido, edad, id)
-        self.codigoCliente = codigoCliente
+class Alumno(Persona):
+    def __init__(self, nombre, dni, edad):
+        super().__init__(nombre, dni, edad)
+        self.notas = []
+
+    def agregar_nota(self, nota):
+        self.notas.append(nota)
+
+    def promedio(self):
+        return sum(self.notas) / len(self.notas)
+
+    def nota_maxima(self):
+        return max(self.notas)
+
+    def nota_minima(self):
+        return min(self.notas)
 
     def toDic(self):
         d = {
@@ -44,25 +55,22 @@ class Cliente(Persona):
         return d
 
 
-class Empleado(Persona):
-    def __init__(self, nombre, apellido, edad, id, codigoEmpleado, area):
-        super().__init__(nombre, apellido, edad, id)
-        self.codigoEmpleado = codigoEmpleado
-        self.area = area
-
-
-class Producto:
-    def __init__(self, nombre, precio, fechaCaducidad, cantidad):
-        self.nombre = nombre
-        self.precio = precio
-        self.fechaCaducidad = fechaCaducidad
-        self.cantidad = cantidad
+class Docente(Persona):
+    def __init__(self, nombre, dni, edad):
+        super().__init__(nombre, dni, edad)
 
 
 class Menu:
     def __init__(self, nombreMenu, listaOpciones):
         self.nombreMenu = nombreMenu
         self.listaOpciones = listaOpciones
+
+    def limpiarPantalla(self):
+        def clear():
+            # return os.system('cls')
+            return os.system("clear")
+
+        clear()
 
     def show(self):
         a = True
@@ -99,70 +107,44 @@ class Menu:
                 time.sleep(3)
         return ans
 
-    def limpiarPantalla(self):
-        def clear():
-            # return os.system('cls')
-            return os.system("clear")
 
-        clear()
+Home_options = {"Alumnos": "1", "Docentes": "2", "Exit": "0"}
+Main_menu = Menu("home", Home_options)
 
-
-Home_op = {"Clientes": "1", "Empleados": "2", "Exit": "0"}
-Main_menu = Menu("home", Home_op)
-
-Client_op = {
-    "Agregar cliente": "1",
-    "Lista de clientes": "2",
-    "Remover cliente": "3",
+Alumno_options = {
+    "Agregar alumnos": "1",
+    "Lista de alumnos": "2",
+    "Remover alumno": "3",
     "Exit": "0",
 }
-Menu_client = Menu("cliente", Client_op)
+Menu_alumno = Menu("cliente", Alumno_options)
 
-Employee_op = {"Horas de trabajo": "1", "Inventario": "2", "Exit": "0"}
-Menu_Employee = Menu("trabajador", Employee_op)
-
-Inventory_op = {
-    "Agregar producto": "1",
-    "Consulta": "2",
-    "Remover producto": "3",
+Teacher_options = {
+    "Agregar docente": "1",
+    "Lista de docentes": "2",
+    "Remover docente": "3",
     "Exit": "0",
 }
-Menu_Inventory = Menu("inventario", Inventory_op)
+Menu_Teacher = Menu("inventario", Teacher_options)
 
-Inventory_consult_op = {
-    "Buscar producto": "1",
-    "Contar items": "2",
-    "Calcular valor del inventario": "3",
-    "Exit": "0",
-}
-Consult_inv = Menu("consulta de inventario", Inventory_consult_op)
+student_list = []
+teacher_list = []
+student_listDic = []
 
-Working_hrs_op = {"Check-in": "1", "Check-out": "2", "Exit": "0"}
-Working_hrs = Menu("horas trabajadas", Working_hrs_op)
-
-
-client_list = []
-product_list = []
-client_listDic = []
-
-fileCliente = utils.fileManager("cliente.txt")
+fileStudent = utils.fileManager("alumnos.txt")
 
 
 def cargainicial():
-    res = fileCliente.leerArchivo()
+    res = fileStudent.leerArchivo()
     print(res)
-    if res != "":
-        listTempCliente = json.loads(res)
-        for dic in listTempCliente:
-            newCliente = Cliente(
-                dic["nombre"],
-                dic["apellido"],
-                dic["edad"],
-                dic["id"],
-                dic["codigoCliente"],
+    if (res != ""):
+        listTempStudent = json.loads(res)
+        for dic in listTempStudent:
+            newStudent = Alumno(
+                dic["nombre"], dic["dni"], dic["edad"]
             )
-            client_listDic.append(newCliente.toDic())
-            client_list.append(newCliente)
+            student_listDic.append(newStudent.toDic())
+            student_list.append(newStudent)
 
 
 cargainicial()
@@ -172,31 +154,36 @@ while f:
     ans = Main_menu.show()
     print(ans)
     if ans.upper() == "1":
-        ans = Menu_client.show()
+        ans = Menu_alumno.show()
         if ans.upper() == "1":
-            print("Ingrese la información del cliente:")
-            nombre = input("Nombre del cliente     : ")
-            apellido = input("Apellido del cliente: ")
-            edad = input("Edad del cliente:")
-            id = input("DNI del cliente:")
-            codigoCliente = input("Código del cliente     :")
+            print("Ingrese la información del alumno:")
+            nombre = input("Nombre del alumno     : ")
+            dni = input("Apellido del alumno: ")
+            edad = input("Edad del alumno:")
+            alumno = Alumno(nombre, dni, edad)
+            for i in range(4):
+                nota = float(input(f"Ingrese la nota {i+1}: "))
+                alumno.agregar_nota(nota)
+            promedio = alumno.promedio()
+            nota_maxima = alumno.nota_maxima()
+            nota_minima = alumno.nota_minima()
             print("")
             o = True
             while o:
                 print(
-                    f"Esta seguro que desea agregar al cliente {nombre} a lista de clientes? (Y/N)"
+                    f"Esta seguro que desea agregar al alumno {nombre} a lista de clientes? (Y/N)"
                 )
                 ans = input(color.YELLOW + "Answer: " + color.END)
                 if ans.upper() == "Y":
-                    client_n = Cliente(nombre, apellido, edad, id, codigoCliente)
-                    client_list.append(client_n)
+                    student_n = Alumno(nombre, dni, edad, alumno.promedio, alumno.nota_maxima, alumno.nota_minima)
+                    student_list.append(student_n)
                     print("")
                     print(color.GREEN + f"{nombre} fue agregado ☑" + color.END)
-                    client_listDic.append(client_n.toDic())
-                    jsonString = json.dumps(client_listDic)
-                    fileCliente.borrarArchivo()
+                    student_listDic.append(student_n.toDic())
+                    jsonString = json.dumps(student_listDic)
+                    fileStudent.borrarArchivo()
 
-                    fileCliente.escribirArchivo(jsonString)
+                    fileStudent.escribirArchivo(jsonString)
                     break
                 elif ans.upper() == "N":
                     print("")
@@ -211,7 +198,7 @@ while f:
                     print("")
         elif ans.upper() == "2":
             print(color.GREEN + "Esta es la lista de clientes ☑:" + color.END)
-            for client in client_list:
+            for client in student_list:
                 print(
                     f"|{client.nombre}|{client.apellido}|{client.edad}|{client.id}|{client.codigoCliente}|"
                 )
@@ -237,4 +224,4 @@ while f:
                     print("")
 
     elif ans == "2":
-        ans = Menu_Employee.show()
+        ans = Menu_Teacher.show()
