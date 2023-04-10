@@ -1,0 +1,16 @@
+{
+    "Nombre": "Gabriela",
+    "Apellido": "Vargas",
+    "Edad": 20,
+    "Aficiones":["Plastimodelismo", "Tocar Guitarra", "Tocar el Bajo"],
+    "Hijos":[
+        {
+            "Nombre":"Pancho",
+            "Edad":1.2
+        },
+        {
+            "Nombre":"Selina Kyle",
+            "Edad":2.5
+        }
+    ]
+}
