@@ -88,7 +88,7 @@ elif(opcion == 3):
     notas = []
     for i in range(4):
         n = int(input(f"Ingrese Nota {i+1}: "))
-        notas.append(n)
+        notas.append(n) 
 
     alumno = Notas(name, max(notas), min(notas), sum(notas)/4)
     archivo = Archivos("notas.txt")
