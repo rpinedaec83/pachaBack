@@ -1,0 +1,28 @@
+git pull fuentes   - llamado a datos docente
+
+git merge fuentes/main main
+
+subir
+
+git add
+gut comit
+git push
+
+
+git-hub web   EN EL MIO
+PULLL REQUEST
+NEW
+
+CAMBIAR A DESARROLLO
+
+
+hack1  
+hack2  pseint
+ha3     py
+hac4    archi csv
+hack 5  normalizacion
+
+
+
+
+
