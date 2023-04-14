@@ -131,3 +131,7 @@ dmypy.json
 # VSCODE
 .vscode/
 vscode
+Semana06Sesion01/database.py
+Semana06Sesion01/index.py
+Semana06Sesion01/requirements.txt
+Semana06Sesion01/router.py
