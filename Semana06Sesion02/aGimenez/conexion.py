@@ -38,6 +38,7 @@ class conexion:
             return exito
         except Error as error:
             print(f"Ha ocurrido un error: {str(error)}")
+            input("Desea Continuar")
             return False
         finally:
             if(conexion):
