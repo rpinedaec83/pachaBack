@@ -1,0 +1,33 @@
+create table A17007048 (
+	Row_ID integer primary key,	
+	Order_ID text, 	
+	Order_Date text,	
+	Ship_Date text,	
+	Ship_Mode text,	
+	ShipModeID integer,	
+	Customer_ID text,	
+	Customer_Name text,	
+	Segment text,	
+	SegmentID integer,	
+	Country text,
+	CountryID integer,	
+	City text,	
+	CityID integer, 	
+	State text,	
+	StateID integer,	
+	Postal_Code integer,
+	Region text,	
+	IDRegion integer,	
+	Product_ID text,	
+	Category text,	
+	CategoryID integer,	
+	Sub_Category text,	
+	SubCategoryID integer,	
+	Product_Name text,	
+	Sales float,	
+	Quantity integer,	
+	Discount float,	
+	Profit float
+)
+
+select * from A17007048
