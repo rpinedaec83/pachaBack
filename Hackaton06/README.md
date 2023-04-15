@@ -1,4 +1,4 @@
-# PachaQTecJunio2021
+# PachaQTecMarzo2023
 Curso de Especialización de Programación BackEnd PachaQtec Junio 2021
 ## DESARROLLO BACK-END
 ### Hackaton Semana 6
