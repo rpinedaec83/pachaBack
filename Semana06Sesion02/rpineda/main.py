@@ -3,7 +3,7 @@ from psycopg2 import connect, Error
 try:
     conn = connect(
         user = 'postgres', 
-        password = 'pacha23', 
+        password = 'toor', 
         host='127.0.0.1', 
         port = '5432', 
         database = 'postgres')
