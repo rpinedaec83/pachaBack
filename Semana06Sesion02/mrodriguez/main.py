@@ -26,22 +26,22 @@
 #     print(f"Conexión cerrada")
 
 
-from conexion import conexion
-from tabulate import TableFormat, tabulate
+# from conexion import conexion
+# from tabulate import TableFormat, tabulate
 
-conexion = conexion()
-query = "Select * from clientes;"
-datos = conexion.consultarBDD(query)
-header = [
-    "ID",
-    "Nombre",
-    "IdSegmento",
-    "IdPais",
-    "IdCiudad",
-    "IdEstado",
-    "Codigo postal",
-    "IdRegion",
-]
-print(tabulate(datos, headers=header, tablefmt="fancy_grid"))
+# conexion = conexion()
+# query = "Select * from clientes;"
+# datos = conexion.consultarBDD(query)
+# header = [
+#     "ID",
+#     "Nombre",
+#     "IdSegmento",
+#     "IdPais",
+#     "IdCiudad",
+#     "IdEstado",
+#     "Codigo postal",
+#     "IdRegion",
+# ]
+# print(tabulate(datos, headers=header, tablefmt="fancy_grid"))
 # print(datos)
 # conexion.ejecutarBDD()
