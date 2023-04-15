@@ -1,5 +1,5 @@
 # PachaQTecMarzo2023
-Curso de Especialización de Programación BackEnd PachaQtec Junio 2021
+Curso de Especialización de Programación BackEnd PachaQtec Marzo 2023
 ## DESARROLLO BACK-END
 ### Hackaton Semana 6
 #### Se requiere lo siguiente:
