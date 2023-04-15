@@ -92,7 +92,7 @@ try:
             query = "Select * from Clientes;"
             res = conexion.consultarBDD(query=query)
             print(tabulate(res, headers=header, tablefmt="fancy_grid"))
-            input("Desea contunuar??")
+            input("Desea continuar??")
         if ansMenuPrincipal == "2":
             IdCliente = int(input("Que cliente deseas editar: "))
             query = f"Select * from Clientes where IdCliente = {IdCliente};"
