@@ -6,7 +6,7 @@
 #         password = 'pacha23',
 #         host='127.0.0.1',
 #         port = '5432',
-#         database = 'postgres')
+#         database = 'postgres') #ejemplo
 #     cur = conn.cursor()
 #     query = 'select version();'
 #     cur.execute(query)
@@ -21,7 +21,8 @@
 #     print(f'Se ha cerrado la conexion')
 
 from conexion import conexion
-from tabulate import TableFormat, tabulate
+
+# from tabulate import TableFormat, tabulate
 
 conexion = conexion()
 query = "Select * from clientes;"
@@ -39,7 +40,7 @@ header = [
 # print(tabulate(datos, headers=header, tablefmt='fancy_grid'))
 # print(datos)
 nombre = input("Dime tu nombre: ")
-idsegmento = int(input("Dime tu segmento"))
+idsegmento = int(input("Dime tu segmento: "))
 idpais = int(input("Dime tu idpais: "))
 idciudad = int(input("Dime tu idCiudad: "))
 idestado = int(input("Dime tu idestado: "))
