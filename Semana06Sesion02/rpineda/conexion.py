@@ -1,21 +1,24 @@
 import psycopg2
 from psycopg2 import Error
 
+
 class conexion:
     def conexion(self):
         try:
-            conn = psycopg2.connect(user='postgres',
-                                    password="pacha23",
-                                    host="localhost",
-                                    port="5432",
-                                    database="D19423")
+            conn = psycopg2.connect(
+                user="postgres",
+                password="pSecret6#",
+                host="localhost",
+                port="5432",
+                database="hackathon05",
+            )
             return conn
         except Error as error:
             print(f"Ha ocurrido en error: {str(error)}")
             return False
-        
-    def consultarBDD(self, query): 
-        try:    
+
+    def consultarBDD(self, query):
+        try:
             conexion = self.conexion()
             cur = conexion.cursor()
             cur.execute(query)
@@ -25,9 +28,10 @@ class conexion:
             print(f"Ha ocurrido un error: {str(error)}")
             return False
         finally:
-            if(conexion):
+            if conexion:
                 cur.close()
                 conexion.close()
+
     def ejecutarBDD(self, query):
         try:
             conexion = self.conexion()
@@ -38,8 +42,9 @@ class conexion:
             return exito
         except Error as error:
             print(f"Ha ocurrido un error: {str(error)}")
+            input("Desea Continuar")
             return False
         finally:
-            if(conexion):
+            if conexion:
                 cur.close()
                 conexion.close()
