@@ -43,19 +43,19 @@ no generar conflictos si tienen distintas versiones.
 
 6. Instalar paquetes:
 
-- Del file requirements.txt:
+   - Del file requirements.txt:
 
-`pip install -r requirements.txt`
+   `pip install -r requirements.txt`
 
-Verificar con: `pip list` o
+   Verificar con: `pip list` o
 
-`pip freeze` para ver paquetes del entorno.
+   `pip freeze` para ver paquetes del entorno.
 
-- Directamente:
+   - Directamente:
 
-`pip install nombreDelPaquete`
+   `pip install nombreDelPaquete`
 
-_nota:_ para ver puertos activados correr: `netstat -a`
+   _nota:_ para ver puertos activados correr: `netstat -a`
 
 7. Conectar con base de datos, crear files.py y codigo respectivo.
 
@@ -63,9 +63,11 @@ _nota:_ para ver puertos activados correr: `netstat -a`
 
    `python nameFile.py`
 
-**Si no generé file requirements y necesito saber cuales fueron**
+   **Si no generé file requirements y necesito saber cuales fueron**
 
-`pip freeze > requirements.txt`
+   `pip freeze > requirements.txt`
+
+8. Desactivar entorno con: `deactivate`
 
 ## PAQUETES RECOMENDADOS:
 
