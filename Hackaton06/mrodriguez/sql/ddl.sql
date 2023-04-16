@@ -60,13 +60,25 @@ CREATE TABLE salones(
     FOREIGN KEY(id_profesor) references profesores(id)
 );
 
+-- CREATE TABLE notas(
+-- 	id serial primary key,
+--     valor int not null,
+--     id_alumno int not null,
+--     id_curso int not null,
+--     id_bimestre int not null,
+--     FOREIGN KEY(id_alumno) references alumnos(id),
+--     FOREIGN KEY(id_curso) references cursos(id),
+--     FOREIGN KEY(id_bimestre) references bimestres(id)
+-- );
+
+--periodos tiene a bimestres
 CREATE TABLE notas(
 	id serial primary key,
     valor int not null,
     id_alumno int not null,
     id_curso int not null,
-    id_bimestre int not null,
+    id_periodo int not null,
     FOREIGN KEY(id_alumno) references alumnos(id),
     FOREIGN KEY(id_curso) references cursos(id),
-    FOREIGN KEY(id_bimestre) references bimestres(id)
+    FOREIGN KEY(id_periodo) references periodos(id)
 );
