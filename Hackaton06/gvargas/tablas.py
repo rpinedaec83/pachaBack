@@ -3,22 +3,22 @@ class Salones:
         self.Nombre = Nombre
         self.Año = Año
 
-class Alumnos:
-    def __init__(self,IdAlumno, Nombre, Edad, Correo, Salon,Notas ):
-        self.IdAlumno = IdAlumno
+class Persona:
+    def __init__(self,Id, Nombre, Edad, Correo, Salon ):
+        self.Id = Id
         self.Nombre = Nombre
         self.Edad = Edad
         self.Correo = Correo
         self.Salon = Salon
+
+class Alumnos(Persona):
+    def __init__(self,IdAlumno, Nombre, Edad, Correo, Salon,Notas ):
+        super().__init__(IdAlumno, Nombre, Edad, Correo, Salon)
         self.Notas = Notas
 
-class Profesores:
+class Profesores(Persona):
     def __init__(self,IdProfesor, Nombre, Edad, Correo, Salon):
-        self.IdProfesor = IdProfesor
-        self.Nombre = Nombre
-        self.Edad = Edad
-        self.Correo = Correo
-        self.Salon = Salon
+        super().__init__(IdProfesor, Nombre, Edad, Correo, Salon)
 
 class Cursos:
     def __init__(self, Nombre, Profesor):
