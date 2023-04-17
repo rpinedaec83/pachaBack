@@ -1,12 +1,6 @@
 from psycopg2 import connect
-
-host = "0.0.0.0"
+host = "localhost"
 port = 5432
-dbname = "prueba"
-user = "postgres"
-password = "zagher99"
-
-def cadena_conexion():
-    conexion = connect(host = host, port = port, dbname = dbname, user = user, password = password )
-
-    return conexion
+dbname = prueba
+user = postgres
+pasword = "toor"
