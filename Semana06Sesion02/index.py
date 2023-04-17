@@ -1,27 +1,19 @@
-from flask import Flask, jsonify
+from flask import Flask
 import router
-
 app = Flask(__name__)
 
-@app.get("/api/usuario")
+@app.get("/")
+
 def index():
-    data = router.obtenerUsuario()
-
-    print("el tipo de datos es: ", type(data))
-    return jsonify(data)
-
-@app.delete("/api/eliminar/<id>")
-def deleteUsuario(id):
-    print('1',id)
-    data = router.eliminaUsuario(id)
-    print('2',id)
-    return jsonify(data)
-
+    data = router.probar()
+    
+        users = [('id':1,'name':'juan')]
+    return "Hola mundo!!"
 if __name__ == "__main__":
+
     app.run(host="127.0.0.1", port=4000)
-
-
-## get: para obtener datos
-## post: insert datos
-## put: actualizar datos
-## delete: eliminar datos
+    
+    ##get: obtener
+    ##post: INsertar
+    ## put: actualziar datos
+    ## delete: eliminar
