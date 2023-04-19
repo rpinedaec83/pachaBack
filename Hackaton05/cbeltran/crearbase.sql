@@ -19,6 +19,7 @@ create table Region(
 create table State(
 	idState serial,
 	nameState varchar(50),
+	foreign key idRegion REFERENCES Region(idRegion),
 	primary key (idState)
 );
 create table City(
@@ -33,7 +34,7 @@ create table Customer  (
 	idCustomer serial,
 	nameCustomer varchar(225),
 	codeCustomer varchar(50),
-	idCity integer REFERENCES City(idCity),
+	foreign key idCity integer REFERENCES City(idCity),
 	primary key (idCustomer)
 );
 
@@ -67,7 +68,7 @@ create table Product (
 	idProduct serial,
 	productCode varchar(50),
 	productName varchar (225),
-	idCategory integer REFERENCES Category(idCategory),
-	idSubCategory integer REFERENCES SubCategory(idSubCategory),
+	foreign key idCategory integer REFERENCES Category(idCategory),
+	foreign key idSubCategory integer REFERENCES SubCategory(idSubCategory),
 	primary key (idProduct)
 );

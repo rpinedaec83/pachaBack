@@ -3,6 +3,7 @@ git pull fuentes   - llamado a datos docente
 git merge fuentes/main main
 
 subir
+6209
 
 git add
 gut comit
