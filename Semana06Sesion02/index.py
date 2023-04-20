@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
     data = router.probar()
     
-        users = [('id':1,'name':'juan')]
+    users = {'id':1,'name':'juan'}
     return "Hola mundo!!"
 if __name__ == "__main__":
 
