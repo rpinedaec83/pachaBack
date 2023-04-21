@@ -1,11 +1,11 @@
-from pymongo import MongoClient
-from pymongo.server_api import ServerApi
+from pymongo import MongoClient, errors
 
 
+# definiendo constructor de la bd:
 class Conexion:
     def __init__(self, uri, database):
         try:
-            self.client = MongoClient(uri, server_api=ServerApi('1'))
+            self.client = MongoClient(uri)
             self.db = self.client[database]
         except Exception as error:
             print(f"Ha ocurrido un error: {error}")
@@ -18,6 +18,7 @@ class Conexion:
         except Exception as error:
             print(f"Ha ocurrido un error: {error}")
 
+    # para obtener registros
     def obtener_registros(self, collection, condition={}):
         try:
             collection = self.db[collection]
@@ -26,6 +27,7 @@ class Conexion:
         except Exception as error:
             print(f"Ha ocurrido un error: {error}")
 
+    # para obtener un registro
     def obtener_registro(self, collection, condition={}):
         try:
             collection = self.db[collection]
@@ -70,6 +72,7 @@ class Conexion:
             print(f"Ha ocurrido un error: {error}")
             return False
 
+    # cerrar
     def cerrar_conexion(self):
         try:
             self.db.close()

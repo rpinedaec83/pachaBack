@@ -1,11 +1,10 @@
 from pymongo import MongoClient
-from pymongo.server_api import ServerApi
 
 
 class Conexion:
     def __init__(self, uri, database):
         try:
-            self.client = MongoClient(uri, server_api=ServerApi('1'))
+            self.client = MongoClient(uri)
             self.db = self.client[database]
         except Exception as error:
             print(f"Ha ocurrido un error: {error}")
