@@ -14,12 +14,12 @@ class Mobile:
         }
 
 
-conn = Conexion("mongodb://localhost:27017","Sesion2")
+conn = Conexion("mongodb://localhost:27017","Sesion2B")
 
 equipo = Mobile("Iphone", "Apple","14 pro")
 
 
-#conn.insertar_registro("producto",equipo.ToDic())
+conn.insertar_registro("producto",equipo.ToDic())
 
 #data = conn.obtener_registros("producto")
 condicion = {
@@ -28,12 +28,12 @@ condicion = {
 newvalues = { "$set": { 'marca': "Android" } }
 #data = conn.obtener_registro("producto",condicion)
 #respuesta = conn.actualizar_registros("producto",condicion,newvalues)
-respuesta = conn.borrar_registros("producto",condicion)
-if(respuesta):
-    print(f"Se actualizo correctamente")
-else:
-    print(f"No se actualizo")
+# respuesta = conn.borrar_registros("producto",condicion)
+# if(respuesta):
+#     print(f"Se actualizo correctamente")
+# else:
+#     print(f"No se actualizo")
 #print(data)
 
 
-conn.cerrar_conexion()
+#conn.cerrar_conexion()
