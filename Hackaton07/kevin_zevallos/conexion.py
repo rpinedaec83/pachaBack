@@ -29,7 +29,8 @@ class Conexion:
         try:
             collection = self.db[collection]
             data = collection.find_one(condition)
-            return list(data)
+            return data
+            #return list(data)
         except Exception as error:
             print(f"Ha ocurrido un error: {error}")
 
@@ -59,7 +60,6 @@ class Conexion:
         except Exception as error:
             print(f"Ha ocurrido un error: {error}")
             return False   
-             
     def borrar_registros(self, collection, condition={}):
         try:
             collection = self.db[collection]
