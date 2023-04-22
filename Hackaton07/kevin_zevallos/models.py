@@ -1,6 +1,5 @@
 class Alumno:
-    def __init__(self,id,nombre,edad,correo):
-        self.id = id
+    def __init__(self,nombre,edad,correo):
         self.nombre = nombre
         self.edad=edad
         self.correo = correo
@@ -8,7 +7,7 @@ class Alumno:
         return{
             "nombre":self.nombre,
             "edad":self.edad,
-            "correo":self.correo
+            "correo":self.correo,
         }
 
 class Salon:
@@ -21,10 +20,10 @@ class Salon:
             "año escolar": self.anoEscolar
         }
 
-class Cursos:
-    def __init__(self,nombreCurso,nomnreProfesor):
+class Curso:
+    def __init__(self,nombreCurso,nombreProfesor):
         self.nombreCurso=nombreCurso
-        self.nombreProfesor=nomnreProfesor
+        self.nombreProfesor=nombreProfesor
     def ToDic(self):
         return{
             "nombre del curso":self.nombreCurso,
@@ -32,8 +31,7 @@ class Cursos:
         }
 
 class Profesor:
-    def __init__(self,id,nombre,edad,correo):
-        self.id = id
+    def __init__(self,nombre,edad,correo):
         self.nombre = nombre
         self.edad = edad
         self.correo = correo
@@ -41,5 +39,5 @@ class Profesor:
         return{
             "nombre":self.nombre,
             "edad":self.edad,
-            "correo":self.correo
+            "correo":self.correo,
         }
