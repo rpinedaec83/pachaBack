@@ -1,7 +1,7 @@
 
-# cliente.server_info()#abrimos conexion 
-# print("conexion exitosa")
-#cliente.close()#cerramos conexion
+cliente.server_info()#abrimos conexion 
+print("conexion exitosa")
+cliente.close()#cerramos conexion
 
 #insertar
 # documento = {  
