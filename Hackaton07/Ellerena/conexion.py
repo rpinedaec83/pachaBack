@@ -1,5 +1,5 @@
-from pip install pymongo import MongoClient
-from pymongo.server_api import ServerApi
+import MongoClient
+import ServerApi
 
 class Conexion:
     def __init__(self, uri, database):
