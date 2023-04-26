@@ -1,6 +1,5 @@
-from pip install pymongo import MongoClient
+from pymongo import MongoClient
 from pymongo.server_api import ServerApi
-
 
 class Conexion:
     def __init__(self, uri, database):
@@ -25,12 +24,13 @@ class Conexion:
             return list(data)
         except Exception as error:
             print(f"Ha ocurrido un error: {error}")
-
+    
     def obtener_registro(self, collection, condition={}):
         try:
             collection = self.db[collection]
             data = collection.find_one(condition)
-            return list(data)
+            return data
+            #return list(data)
         except Exception as error:
             print(f"Ha ocurrido un error: {error}")
 
@@ -42,7 +42,7 @@ class Conexion:
         except Exception as error:
             print(f"Ha ocurrido un error: {error}")
             return False
-
+        
     def actualizar_registros(self, collection, condition={}, newValues={}):
         try:
             collection = self.db[collection]
@@ -51,7 +51,7 @@ class Conexion:
         except Exception as error:
             print(f"Ha ocurrido un error: {error}")
             return False
-
+        
     def borrar_registro(self, collection, condition={}):
         try:
             collection = self.db[collection]
@@ -59,8 +59,7 @@ class Conexion:
             return True
         except Exception as error:
             print(f"Ha ocurrido un error: {error}")
-            return False
-
+            return False   
     def borrar_registros(self, collection, condition={}):
         try:
             collection = self.db[collection]
@@ -68,7 +67,7 @@ class Conexion:
             return True
         except Exception as error:
             print(f"Ha ocurrido un error: {error}")
-            return False
+            return False        
 
     def cerrar_conexion(self):
         try:
