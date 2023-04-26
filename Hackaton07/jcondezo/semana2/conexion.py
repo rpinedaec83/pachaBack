@@ -1,4 +1,4 @@
-from pip install pymongo import MongoClient
+from pymongo import MongoClient
 from pymongo.server_api import ServerApi
 
 class Conexion:
@@ -67,7 +67,7 @@ class Conexion:
             return True
         except Exception as error:
             print(f"Ha ocurrido un error: {error}")
-            return False        
+            return False
 
     def cerrar_conexion(self):
         try:
@@ -75,6 +75,3 @@ class Conexion:
             print("Esta conexion se ha cerrado correctamente")
         except Exception as error:
             print(f"Ha ocurrido un error: {error}")
-
-
-    

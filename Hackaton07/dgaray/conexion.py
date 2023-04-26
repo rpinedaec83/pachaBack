@@ -1,5 +1,6 @@
-from pip install pymongo import MongoClient
+from pymongo import MongoClient
 from pymongo.server_api import ServerApi
+from bson.objectid import ObjectId
 
 class Conexion:
     def __init__(self, uri, database):
@@ -25,18 +26,21 @@ class Conexion:
         except Exception as error:
             print(f"Ha ocurrido un error: {error}")
     
-    def obtener_registro(self, collection, condition={}):
+    def obtener_registro(self, collection, id_buscado):
         try:
-            collection = self.db[collection]
-            data = collection.find_one(condition)
-            return list(data)
+            collection1 = self.db[collection]
+            # prueba= ObjectId(id_buscado)
+            data = collection1.find_one({'_id': id_buscado})
+            print(data)
+            return data
         except Exception as error:
             print(f"Ha ocurrido un error: {error}")
 
-    def actualizar_registro(self, collection, condition={}, newValues={}):
+    def actualizar_registro(self, collection, id_buscado, newValues):
         try:
-            collection = self.db[collection]
-            result = collection.update_one(condition, newValues)
+            collection1 = self.db[collection]
+            result = collection1.update_one({'_id': id_buscado}, newValues)
+            print(result)
             return True
         except Exception as error:
             print(f"Ha ocurrido un error: {error}")
@@ -51,10 +55,10 @@ class Conexion:
             print(f"Ha ocurrido un error: {error}")
             return False
         
-    def borrar_registro(self, collection, condition={}):
+    def borrar_registro(self, collection, id_buscado):
         try:
-            collection = self.db[collection]
-            result = collection.delete_one(condition)
+            collection1 = self.db[collection]
+            result = collection1.delete_one({'_id': id_buscado})
             return True
         except Exception as error:
             print(f"Ha ocurrido un error: {error}")
