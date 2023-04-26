@@ -7,8 +7,8 @@ class Controller:
         return libro.crearLibro()
 
     def traerLibros(self):
-        libros = Libros()
-        return libros.traerLibros()
+        libro = Libros()
+        return libro.traerLibros()
 
     def traerLibro(self, titulo):
         libro = Libros(titulo=titulo)

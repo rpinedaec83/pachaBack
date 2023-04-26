@@ -3,6 +3,7 @@ from db import db
 
 class Libros:
     def __init__(self, titulo, fecPublicacion, isbn, autor):
+        # self.id = id
         self.titulo = titulo
         self.fecPublicacion = fecPublicacion
         self.isbn = isbn
@@ -10,17 +11,16 @@ class Libros:
 
     def crearLibro(self):
         conn = db()
-        query = f"""INSERT INTO public."Libros"(
-	                 titulo, "fecPublicacion", isbn, autor)
-                    values('{self.titulo}', '{self.fecPublicacion}', '{self.isbn}', {self.autor})"""
+        query = f"""insert into Libros(titulo, fecPublicacion, isbn, autor) 
+        VALUES ('{self.titulo}', '{self.fecPublicacion}', '{self.isbn}', {self.autor})"""
         return conn.ejecutarBDD(query)
 
-    def traerLibros(self):
+    def traerLibros():
         conn = db()
-        query = f"select * from Libros"
+        query = f"SELECT * FROM Libros"
         return conn.consultarBDD(query)
 
-    def traerLibro(self):
+    def traerLibro():
         conn = db()
-        query = f"Select * from Libros where nombre = '{self.nombre}'"
+        query = f"SELECT * FROM Libros WHERE id = 1"
         return conn.consultarBDD(query)

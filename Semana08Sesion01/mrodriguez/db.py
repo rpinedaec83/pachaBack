@@ -3,12 +3,12 @@ from psycopg2 import Error
 
 
 class db:
-    def conexion(self):
+    def db(self):
         try:
             conn = psycopg2.connect(
                 user="postgres",
-                password="pacha23",
-                host="localhost",
+                password="pSecret6#",
+                host="127.0.0.1",
                 port="5432",
                 database="biblioteca",
             )
@@ -19,8 +19,8 @@ class db:
 
     def consultarBDD(self, query):
         try:
-            conexion = self.conexion()
-            cur = conexion.cursor()
+            db = self.db()
+            cur = db.cursor()
             cur.execute(query)
             records = cur.fetchall()
             return records
@@ -28,23 +28,22 @@ class db:
             print(f"Ha ocurrido un error: {str(error)}")
             return False
         finally:
-            if conexion:
+            if db:
                 cur.close()
-                conexion.close()
+                db.close()
 
     def ejecutarBDD(self, query):
         try:
-            conexion = self.conexion()
-            cur = conexion.cursor()
+            db = self.db()
+            cur = db.cursor()
             cur.execute(query)
-            conexion.commit()
+            db.commit()
             exito = True
             return exito
         except Error as error:
             print(f"Ha ocurrido un error: {str(error)}")
-            input("Desea Continuar")
             return False
         finally:
-            if conexion:
+            if db:
                 cur.close()
-                conexion.close()
+                db.close()
