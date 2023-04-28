@@ -8,7 +8,15 @@ class UsersTableSeeder(Seeder):
         Run the database seeds.
         """
         self.db.table('users').insert({
-            'name': 'rpineda',
-            'email': 'rpineda@x-codec.net'
-        })
+                'name': 'twittor',
+                'email': 'twittor@twittor.com'
+            })
+        self.db.table('users').insert({
+                'name': 'john',
+                'email': 'john@doe.com'
+            })
+        self.db.table('users').insert({
+                'name': 'jane',
+                'email': 'jane@doe.com'
+            })
 
