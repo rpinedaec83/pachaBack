@@ -8,9 +8,11 @@ class CreateFollowersTable(Migration):
         """
         with self.schema.create("followers") as table:
             table.increments("id")
-            table.integer("follower_id").unsigned()
-            table.integer("followed_id").unsigned()
+            table.integer("follower_id").unsigned()  # user follower
+            table.integer("followed_id").unsigned()  # user who is followed
             table.timestamps()
+
+            # fk
             table.foreign("follower_id").references("id").on("users").on_delete(
                 "cascade"
             )

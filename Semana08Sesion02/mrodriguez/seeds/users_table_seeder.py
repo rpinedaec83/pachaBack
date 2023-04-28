@@ -6,6 +6,7 @@ class UsersTableSeeder(Seeder):
         """
         Run the database seeds.
         """
+        # pasando datos a alimentar
         self.db.table("users").insert(
             {"name": "twittor", "email": "twittor@twittor.com"}
         )

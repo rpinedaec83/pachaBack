@@ -6,10 +6,12 @@ class FollowersTableSeeder(Seeder):
         """
         Run the database seeds.
         """
+        # identificando usuarios
         twittor = self.db.table("users").where("name", "twittor").first()
         john = self.db.table("users").where("name", "john").first()
         jane = self.db.table("users").where("name", "jane").first()
 
+        # pasando follower a cada usuario por user_id
         self.db.table("followers").insert(
             [
                 {"follower_id": twittor.id, "followed_id": john.id},

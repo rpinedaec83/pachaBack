@@ -6,11 +6,12 @@ class MessagesTableSeeder(Seeder):
         """
         Run the database seeds.
         """
-
+        # identificando usuarios
         twittor = self.db.table("users").where("name", "twittor").first()
         john = self.db.table("users").where("name", "john").first()
         jane = self.db.table("users").where("name", "jane").first()
 
+        # pasando mensaje a cada usuario por user_id
         self.db.table("messages").insert(
             {"content": "Twittor's message.", "user_id": twittor["id"]}
         )

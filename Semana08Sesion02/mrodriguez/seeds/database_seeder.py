@@ -1,4 +1,6 @@
 from orator.seeds import Seeder
+
+# llamar a los files seeders
 from .users_table_seeder import UsersTableSeeder
 from .messages_table_seeder import MessagesTableSeeder
 from .followers_table_seeder import FollowersTableSeeder

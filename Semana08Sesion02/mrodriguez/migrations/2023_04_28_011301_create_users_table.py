@@ -8,10 +8,12 @@ class CreateUsersTable(Migration):
         """
         with self.schema.create("users") as table:
             table.increments("id")
+            # agregando campos de la tabla
             table.string("name").unique()
             table.string("email").unique()
             table.timestamps()
 
+    # para borrar tabla users
     def down(self):
         """
         Revert the migrations.
