@@ -10,7 +10,7 @@ class CreateSalonesTable(Migration):
         with self.schema.table('salones') as table:
             table.increments('id')
             table.string('nombre')
-            table.string('año escolar')
+            table.string('año_escolar')
             table.timestamps()
 
     def down(self):

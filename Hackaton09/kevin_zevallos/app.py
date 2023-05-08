@@ -26,7 +26,7 @@ class Alumno(db.Model):
     __fillable__ = ['id','nombre','edad','correo']
     __table__ = 'alumnos'
 class Profesor(db.Model):
-    __fillable__ = ['id','nombre','edad','email']
+    __fillable__ = ['id','nombre','edad','correo']
     __table__ = 'profesores'
 
 class Salon(db.Model):
@@ -77,11 +77,25 @@ def update_alumno(id):
     alumno.update(**request.get_json())
     return jsonify(alumno)
 # Definir rutas de la API Profesores
-@app.route('/profesores',methods=['POST'])
+@app.route('/profesores/create',methods=['POST','GET'])
 def create_profesor():
-    profesor = Profesor.create(**request.get_json())
-    return jsonify(profesor)
-
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        edad = request.form['edad']
+        correo = request.form['correo']
+        profesor = Profesor.create(nombre= nombre,edad=edad,correo=correo)
+        return render_template('base.html')
+    if request.method == 'GET':
+        return render_template('profesores/create-profesor.html')
+@app.route('/profesores/delete',methods=['POST','GET'])
+def delete_profesor():
+    if request.method == 'POST':
+        id_profesor = request.form['id']
+        profesor= Profesor.find(id_profesor)
+        profesor.delete()
+        return render_template('base.html')
+    if request.method == 'GET':
+        return render_template('profesores/delete-profesor.html')
 @app.route('/profesores/<int:id>',methods=['GET'])
 def get_profesor(id):
     profesor = Profesor.find_or_fail(id)
@@ -90,7 +104,7 @@ def get_profesor(id):
 @app.route('/profesores',methods=['GET'])
 def get_all_profesores():
     profesores = Profesor.all()
-    return jsonify(profesores)
+    return render_template('profesores/profesores.html',profesores = profesores)
 
 @app.route('/profesores/<int:id>',methods=['PATCH'])
 def update_profesor(id):
@@ -98,11 +112,24 @@ def update_profesor(id):
     profesor.update(**request.get_json())
     return jsonify(profesor)
 # Definir rutas de la API Cursos
-@app.route('/cursos',methods=['POST'])
+@app.route('/cursos/create',methods=['POST','GET'])
 def create_curso():
-    curso = Curso.create(**request.get_json())
-    return jsonify(curso)
-
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        profesor = request.form['profesor']
+        curso = Curso.create(nombre= nombre,profesor=profesor)
+        return render_template('base.html')
+    if request.method == 'GET':
+        return render_template('cursos/create-curso.html')
+@app.route('/cursos/delete',methods=['POST','GET'])
+def delete_curso():
+    if request.method == 'POST':
+        id_curso = request.form['id']
+        curso= Curso.find(id_curso)
+        curso.delete()
+        return render_template('base.html')
+    if request.method == 'GET':
+        return render_template('cursos/delete-curso.html')
 @app.route('/cursos/<int:id>',methods=['GET'])
 def get_curso(id):
     curso = Curso.find_or_fail(id)
@@ -111,19 +138,32 @@ def get_curso(id):
 @app.route('/cursos',methods=['GET'])
 def get_all_cursos():
     cursos = Curso.all()
-    return jsonify(cursos)
+    return render_template('cursos/cursos.html',cursos = cursos)
 
-@app.route('/profesores/<int:id>',methods=['PATCH'])
+@app.route('/cursos/<int:id>',methods=['PATCH'])
 def update_curso(id):
     curso = curso.find_or_fail(id)
     curso.update(**request.get_json())
     return jsonify(curso)
 # Definir rutas de la API Salones
-@app.route('/salones',methods=['POST'])
+@app.route('/salones/create',methods=['POST','GET'])
 def create_salon():
-    salon = Salon.create(**request.get_json())
-    return jsonify(salon)
-
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        año_escolar = request.form['año escolar']
+        salon = Salon.create(nombre= nombre,año_escolar=año_escolar)
+        return render_template('base.html')
+    if request.method == 'GET':
+        return render_template('salones/create-salon.html')
+@app.route('/salones/delete',methods=['POST','GET'])
+def delete_salon():
+    if request.method == 'POST':
+        id_salon = request.form['id']
+        salon= Salon.find(id_salon)
+        salon.delete()
+        return render_template('base.html')
+    if request.method == 'GET':
+        return render_template('salones/delete-salon.html')
 @app.route('/salones/<int:id>',methods=['GET'])
 def get_salon(id):
     salon = Salon.find_or_fail(id)
@@ -132,7 +172,7 @@ def get_salon(id):
 @app.route('/salones',methods=['GET'])
 def get_all_salones():
     salones = Salon.all()
-    return jsonify(salones)
+    return render_template('salones/salones.html',salones = salones)
 
 @app.route('/salones/<int:id>',methods=['PATCH'])
 def update_salon(id):

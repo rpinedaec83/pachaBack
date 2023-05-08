@@ -22,9 +22,9 @@
     <nav>
         <a href="{{ url_for('index') }}">ColegioApp</a>
         <a href="{{ url_for('get_all_alumnos')}}">ver alumnos</a>
-        <a href="#">ver profesores</a>
-        <a href="#">ver salones</a>
-        <a href="#">ver cursos</a>
+        <a href="{{ url_for('get_all_profesores')}}">ver profesores</a>
+        <a href="{{ url_for('get_all_salones')}}">ver salones</a>
+        <a href="{{ url_for('get_all_cursos')}}">ver cursos</a>
     </nav>
     <hr>
     <div class="content">
