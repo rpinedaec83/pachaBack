@@ -19,8 +19,19 @@ def create_app(settings_module='config.dev'):
 
     db.init_app(app)
 
+    from .auth import auth_bp
+    app.register_blueprint(auth_bp)
+
+    from .public import public_bp
+    app.register_blueprint(public_bp)
+
+    from .perfil import perfil_bp
+    app.register_blueprint(perfil_bp)
     register_error_handlers(app)
 
+
+    
+    return app
 
 def register_error_handlers(app):
 

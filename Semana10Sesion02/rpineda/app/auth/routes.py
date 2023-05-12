@@ -15,7 +15,7 @@ def show_signup_form():
     form = SignupForm()
     error = None
     if form.validate_on_submit():
-        name = form.name.data
+        username = form.username.data
         email = form.email.data
         password = form.password.data
         # Comprobamos que no hay ya un usuario con ese email
@@ -24,7 +24,7 @@ def show_signup_form():
             error = f'El email {email} ya está siendo utilizado por otro usuario'
         else:
             # Creamos el usuario y lo guardamos
-            user = User(name=name, email=email)
+            user = User(username=username, email=email)
             user.set_password(password)
             user.save()
             # Dejamos al usuario logueado

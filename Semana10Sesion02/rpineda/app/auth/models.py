@@ -9,13 +9,13 @@ class User(db.Model, UserMixin):
     __tablename__ = 'model_user'
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80), nullable=False)
+    username = db.Column(db.String(80), nullable=False)
     email = db.Column(db.String(256), unique=True, nullable=False)
     password = db.Column(db.String(128), nullable=False)
     is_admin = db.Column(db.Boolean, default=False)
 
-    def __init__(self, name, email):
-        self.name = name
+    def __init__(self, username, email):
+        self.username = username
         self.email = email
 
     def __repr__(self):
@@ -39,3 +39,4 @@ class User(db.Model, UserMixin):
     @staticmethod
     def get_by_email(email):
         return User.query.filter_by(email=email).first()
+
