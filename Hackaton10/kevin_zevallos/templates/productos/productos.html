@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Hackaton 09{% endblock %}
+
+{% block content %}
+    
+        <table>
+            <tr>
+                <th>ID Producto</th>
+                <th>Producto</th>
+                <th>Stock</th>
+            </tr>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto.id }}</td>
+                <td>{{ producto.producto }}</td>
+                <td>{{ producto.stock }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    <div class="opciones">
+        <nav>
+            <a href="{{ url_for('create_alumno')}}">agregar alumno</a>
+            <a href="{{ url_for('delete_alumno')}}">eliminar alumno</a>
+        </nav>
+    </div>
+{% endblock %}
