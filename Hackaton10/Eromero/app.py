@@ -122,7 +122,6 @@ def procesar_venta(producto_id):
         producto = Producto.find(producto_id)
         return render_template('procesar_venta.html', producto=producto)
 
-
 @app.route('/ventas/factura/<factura_id>')
 @login_required
 def factura(factura_id):
