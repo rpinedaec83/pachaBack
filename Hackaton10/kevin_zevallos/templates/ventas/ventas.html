@@ -14,16 +14,16 @@
             {% for venta in ventas %}
             <tr>
                 <td>{{ venta.id }}</td>
-                <td>{{ venta.prodcuto }}</td>
-                <td>{{ venta.cantidad }}</td>
+                <td>{{ venta.producto }}</td>
                 <td>{{ venta.precio }}</td>
+                <td>{{ venta.cantidad }}</td>
             </tr>
             {% endfor %}
         </table>
 
     <div class="opciones">
         <nav>
-            <a href="{{ url_for('create_venta')}}">generar venta</a>
+            <a href="{{ url_for('createVenta',id=2)}}">generar venta</a>
         </nav>
     </div>
 {% endblock %}

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Hackaton 09{% endblock %}
+{% block title %}Hackaton 10{% endblock %}
 
 {% block content %}
     
@@ -21,8 +21,7 @@
 
     <div class="opciones">
         <nav>
-            <a href="{{ url_for('create_alumno')}}">agregar alumno</a>
-            <a href="{{ url_for('delete_alumno')}}">eliminar alumno</a>
+            <a href="{{ url_for('updateProduct',id=3)}}">actualizar producto</a>
         </nav>
     </div>
 {% endblock %}
