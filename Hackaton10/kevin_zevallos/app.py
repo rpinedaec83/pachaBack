@@ -48,46 +48,74 @@ class Venta(db.Model):
 def index():
     return render_template('base.html')
 
-@app.route('/api/get_products/<int:id>',methods=['GET'])
+@app.route('/api/productos/<int:id>',methods=['GET'])
 def getRegistros(id):
     usuario = Usuario.find(id)
     if usuario is None:
         return 'El usuario no existe'
     else:
-        if request.method == 'GET':
-            if(usuario.to_dict()['rol']=='administrador'):
-                    productos=Producto.all()
-                    return render_template('productos/productos.html',productos = productos)
-            else:
-                return 'No tienes permiso para ver los registros :)'
-@app.route('/api/get_ventas/<int:id>',methods=['GET'])
-def getVentas(id):
+        if request.method == 'GET' and usuario.to_dict()['rol']=='administrador':
+            productos=Producto.all()
+            return render_template('productos/productos.html',productos = productos)
+        
+        else:
+            return 'No tienes permiso para ver los registros :)'
+@app.route('/api/productos/update/<int:id>',methods=['GET','POST'])
+def updateProduct(id=3):
     usuario = Usuario.find(id)
     if usuario is None:
         return 'El usuario no existe'
     else:
-        if(usuario.to_dict()['rol']=='administrador'):
-                ventas=Venta.all()
-                return render_template('ventas/ventas.html',ventas=ventas)
+        if request.method == 'GET' and usuario.to_dict()['rol']=='almacen':
+            return render_template('productos/update-product.html')
+        if request.method == 'POST' and usuario.to_dict()['rol']=='almacen':
+            id_producto = request.form['id']
+            selected_product = Producto.find(id_producto)
+            stock = request.form['stock']
+            selected_product.stock = stock
+            selected_product.save()
+            productos = Producto.all()
+            return render_template('productos/productos.html',productos = productos)
+        else:
+            return "no tienes persmisos para actualizar productos :)"
+@app.route('/api/ventas/<int:id>',methods=['GET'])
+def getVentas(id=1):
+    usuario = Usuario.find(id)
+    if usuario is None:
+        return 'El usuario no existe'
+    else:
+        if request.method == 'GET' and usuario.to_dict()['rol']=='administrador':
+            ventas=Venta.all()
+            return render_template('ventas/ventas.html',ventas=ventas)
         else:
             return 'No tienes permiso para ver los registros de ventas :)'
-@app.route('/api/update_products/<int:id>/<int:id_producto>',methods=['GET','POST','PUT'])
-def modificarRegistro(id,id_producto):
+@app.route('/api/ventas/create/<int:id>',methods=['POST','GET'])
+def createVenta(id=2):
     usuario = Usuario.find(id)
     if usuario is None:
         return 'El usuario no existe'
     else:
-        if(usuario.to_dict()['rol']=='almacen'):
-                getData = request.get_json()
-                Producto.where('id',id_producto).update(producto = getData['producto'],stock=getData['stock'])
-                return 'actualizado'
-        elif(usuario.to_dict()['rol']=='cajero'):
-                pass
+        if request.method == 'GET' and usuario.to_dict()['rol']=='cajero':
+            return render_template('ventas/create-venta.html')
+        if request.method == 'POST' and usuario.to_dict()['rol']=='cajero':
+            product = request.form['producto']
+            precio = request.form['precio']
+            cantidad = request.form['cantidad']
+            Venta.create(producto = product,precio = precio,cantidad = cantidad)
+            return "se creo una nueva venta"
         else:
-            return 'No tienes el rol de almacen para modificar los registros :)'
-
-
+            return "no tienes persmisos :)"
 """
+if request.method == 'PUT' & usuario.to_dict()['rol']=='almacen':
+            producto = Producto.find(id_producto)
+            nombre_producto=request.form.get('producto')
+            stock= request.form.get('stock')
+            producto.producto=nombre_producto
+            producto.stock=stock
+            producto.save()
+            return "re actualizó el producto"
+
+
 # Definir rutas de la API Alumnos
 @app.route('/')
 def index():
