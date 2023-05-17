@@ -1,8 +1,7 @@
 from orator import DatabaseManager, Schema
-import psycopg2
 
-class OratorConfig:
-    ORATOR_DATABASES = {
+DATABASES = {
+    'default': 'postgres',
     'postgres': {
         'driver': 'postgres',
         'host': 'localhost',
@@ -11,13 +10,7 @@ class OratorConfig:
         'password': 'S4r4yCh1qu1',
         'prefix': ''
     }
-    }
-    SECRET_KEY = "ANAMA23"
+}
 
-
-db = DatabaseManager(OratorConfig.ORATOR_DATABASES)
+db = DatabaseManager(DATABASES)
 schema = Schema(db)
-
-# Comprobamos la conexión
-print(db.table('alumnos').get())
-
