@@ -1,7 +1,7 @@
 from flask import url_for
 from slugify import slugify
 from sqlalchemy.exc import IntegrityError
-
+import datetime
 from app import db
 
 
@@ -11,6 +11,7 @@ class Post(db.Model):
     title = db.Column(db.String(256), nullable=False)
     title_slug = db.Column(db.String(256), unique=True, nullable=False)
     content = db.Column(db.Text)
+    created = db.Column(db.DateTime, default=datetime.datetime.utcnow)
 
     def __repr__(self):
         return f'<Post {self.title}>'
@@ -41,3 +42,11 @@ class Post(db.Model):
     @staticmethod
     def get_all():
         return Post.query.all()
+    
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+
+    @staticmethod
+    def get_by_id(id):
+        return Post.query.get(id)
