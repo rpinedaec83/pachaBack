@@ -18,3 +18,12 @@ APP_ENV_DEVELOPMENT = 'development'
 APP_ENV_STAGING = 'staging'
 APP_ENV_PRODUCTION = 'production'
 APP_ENV = ''
+
+MAIL_SERVER = 'smtp.gmail.com'
+MAIL_PORT = 587
+MAIL_USERNAME = 'rpinedaec93@gmail.com'
+MAIL_PASSWORD = 'asdasdasda'
+DONT_REPLY_FROM_EMAIL = 'miniblog@x-codec.net'
+ADMINS = ('rpineda@x-codec.net', )
+MAIL_USE_TLS = True
+MAIL_DEBUG = False
