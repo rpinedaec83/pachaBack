@@ -1,11 +1,14 @@
 import logging
-from flask import render_template, redirect, url_for, abort
+from flask import render_template, redirect, url_for, abort, request, current_app
 from flask_login import login_required, current_user
 from app.auth.decorators import admin_required
 from app.models import Post
 from . import admin_bp
 from .forms import PostForm, UserAdminForm
 from app.auth.models import User
+import os
+
+from werkzeug.utils import secure_filename
 
 
 logger = logging.getLogger(__name__)
@@ -33,12 +36,21 @@ def post_form():
     if form.validate_on_submit():
         title = form.title.data
         content = form.content.data
+        file = form.post_image.data
+        image_name = None
+        # Comprueba si la petición contiene la parte del fichero
+        if file:
+            image_name = secure_filename(file.filename)
+            images_dir = current_app.config['POSTS_IMAGES_DIR']
+            os.makedirs(images_dir, exist_ok=True)
+            file_path = os.path.join(images_dir, image_name)
+            file.save(file_path)
         post = Post(user_id=current_user.id, title=title, content=content)
+        post.image_name = image_name
         post.save()
         logger.info(f'Guardando nuevo post {title}')
         return redirect(url_for('admin.list_posts'))
     return render_template("admin/post_form.html", form=form)
-
 
 @admin_bp.route("/admin/post/<int:post_id>/", methods=['GET', 'POST'])
 @login_required
