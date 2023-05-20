@@ -4,6 +4,7 @@ from models import Usuario, Producto, Factura, Comprador
 from config import OratorConfig
 import requests
 
+
 app = Flask(__name__)
 app.config.from_object(OratorConfig)
 login_manager = LoginManager()
