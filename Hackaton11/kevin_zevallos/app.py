@@ -43,7 +43,8 @@ def index():
     if 'user_id' in session:
         user_id = session['user_id']
         user = Usuario.find(user_id)
-        return render_template('base.html',id = user.id,user=user)
+        rol=user.to_dict()['rol']
+        return render_template('base.html',id = user.id,rol=rol)
     else:
         return redirect(url_for('login'))
 @app.route('/login',methods=['GET','POST'])
@@ -88,7 +89,7 @@ def updateProduct(id):
         return 'El usuario no existe'
     else:
         if request.method == 'GET' and usuario.to_dict()['rol']=='almacen':
-            return render_template('productos/update-product.html')
+            return render_template('productos/update-product.html',id=usuario.id)
         if request.method == 'POST' and usuario.to_dict()['rol']=='almacen':
             id_producto = request.form['id']
             selected_product = Producto.find(id_producto)
@@ -96,6 +97,23 @@ def updateProduct(id):
             selected_product.stock = stock
             selected_product.save()
             productos = Producto.all()
+            return render_template('productos/productos.html',id = usuario.id,productos = productos)
+        else:
+            return "no tienes persmisos para actualizar productos :)"
+@app.route('/api/productos/update/<int:id>',methods=['GET','POST'])
+def createProduct(id):
+    usuario = Usuario.find(id)
+    if usuario is None:
+        return 'El usuario no existe'
+    else:
+        if request.method == 'GET' and usuario.to_dict()['rol']=='almacen':
+            return render_template('productos/create-product.html',id=usuario.id)
+        if request.method == 'POST' and usuario.to_dict()['rol']=='almacen':
+            producto = request.form['product']
+            precio_venta = request.form['precio_venta']
+            stock = request.form['stock']
+            Producto.create(producto=producto,precio_venta=precio_venta,stock=stock)
+            productos=Producto.all()
             return render_template('productos/productos.html',id = usuario.id,productos = productos)
         else:
             return "no tienes persmisos para actualizar productos :)"
@@ -117,14 +135,24 @@ def createCompra(id):
         return 'El usuario no existe'
     else:
         if request.method == 'GET' and usuario.to_dict()['rol']=='cajero':
-            return render_template('ventas/create-venta.html')
+            return render_template('ventas/create-venta.html',id=usuario.id)
         if request.method == 'POST' and usuario.to_dict()['rol']=='cajero':
-            product = request.form['producto']
-            precio = request.form['precio']
+            product_id = request.form['id_producto']
+            product = Producto.find(product_id)
             cantidad = request.form['cantidad']
-            Venta.create(producto = product,precio = precio,cantidad = cantidad)
-            return "se creo una nueva venta"
+            monto = product.precio_venta * float(cantidad)
+            if product is not None and product.stock> 0:
+                new_venta=Venta.create(id_usuario=usuario.id,producto = product.producto,cantidad = cantidad,monto = monto)
+                cantidad_vendida = new_venta.cantidad
+                nuevo_stock = int(product.stock) - int(cantidad_vendida)
+                product.stock = str(nuevo_stock)
+                product.save()
+                return "se creo una nueva venta"
+            else:
+                return "el producto no se encuentra en la base de datos"
+            
+            
         else:
-            return "no tienes persmisos :)"
+            return "no tienes permisos :)"
 if __name__ == '__main__':
     app.run(host="localhost",port=8000,debug=True)
