@@ -11,19 +11,14 @@
                 <th>Cantidad vendida</th>
                 <th>Precio</th>
             </tr>
-            {% for venta in ventas %}
+            {% for compra in compras %}
             <tr>
-                <td>{{ venta.id }}</td>
-                <td>{{ venta.producto }}</td>
-                <td>{{ venta.precio }}</td>
-                <td>{{ venta.cantidad }}</td>
+                <td>{{ compra.id }}</td>
+                <td>{{ compra.producto }}</td>
+                <td>{{ compra.cantidad }}</td>
+                <td>{{ compra.monto }}</td>
             </tr>
             {% endfor %}
         </table>
 
-    <div class="opciones">
-        <nav>
-            <a href="{{ url_for('createCompra',id=id)}}">generar venta</a>
-        </nav>
-    </div>
 {% endblock %}
