@@ -14,7 +14,7 @@ https://www.djangoproject.com/start/
 
    ctrl + z + enter
 
-5. Creating a project: `django-admin startproject projectName`
+5. Creating a project: `django-admin startproject projectName .`
 
    ```
    mysite/
@@ -31,7 +31,7 @@ _More info:_ https://docs.djangoproject.com/en/4.2/intro/tutorial01/
 
 6. The development server: `python manage.py runserver`
 
-7. _OPTIONAL:_ Change languaje (if you like): go to setings.py folder.
+7. _OPTIONAL:_ Change languaje (if you like): go to _setings.py_ folder.
 
    - TIME_ZONE = "UTC" - LANGUAGE_CODE = "en-us"
 
