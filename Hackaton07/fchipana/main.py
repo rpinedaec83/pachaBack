@@ -79,27 +79,6 @@ def cargar_registros_iniciales():
         }
         profesores_col.insert_one(profesor)
 
-# def menu_cursos():
-#     while True:
-#         opcion = input("""¿Qué desea hacer?
-#         1. Crear nuevo curso
-#         2. Modificar curso existente
-#         3. Eliminar curso existente
-#         4. Consultar cursos
-#         5. Regresar al menú principal\n""")
-#         if opcion == '1':
-#             agregar_registro("Cursos")
-#         elif opcion == '2':
-#             modificar_registro("Cursos")
-#         elif opcion == '3':
-#             eliminar_registro("Cursos")
-#         elif opcion == '4':
-#             consultar_registros("Cursos")
-#         elif opcion == '5':
-#             break
-#         else:
-#             print("Opción inválida. Intente de nuevo.")
-
 
 def agregar_registro(tabla):
     if tabla == "Alumnos":
