@@ -1,0 +1,2 @@
+{'Nombre': 'Yamizaki', 'Apellido': 'Arakaki', 'Documento': '72669244', 'Nota Mayor': 15, 'Nota Menor': 12, 'Nota Promedio': 13.5}
+{'Nombre': 'Yamizaki2', 'Apellido': 'Arakaki2', 'Documento': '123457', 'Nota Mayor': 124, 'Nota Menor': 21, 'Nota Promedio': 47.5}
