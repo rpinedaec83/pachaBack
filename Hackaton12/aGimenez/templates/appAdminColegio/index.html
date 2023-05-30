@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block titulo %} Administracion del Colegio {% endblock %}
+{% block titulo_principal %} Bienvenido a la Administracion del Colegio {% endblock %}
+{% block titulo_secundaro %} Listado de Cursos {% endblock %}
+
+{% block principal %}
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre del Curso</th>
+                <th>Nombre del Salon</th>
+
+            </tr>
+        </thead>
+        {% for curso in cursos %}
+            <tr>
+                <td>{{ curso.nombre }}</td>
+                <td>{{ curso.salon }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
