@@ -54,6 +54,7 @@ class Matricula(models.Model):
     profesor=models.ForeignKey(UserSchool, on_delete=models.DO_NOTHING)
     aula=models.ForeignKey(Aula, on_delete=models.DO_NOTHING)
     ciclo=models.ForeignKey(Ciclo, on_delete=models.DO_NOTHING)
+    curso=models.ForeignKey(Curso, on_delete=models.DO_NOTHING,null=True)
     def __str__(self):
         return str(self.id)
 
