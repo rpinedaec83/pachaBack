@@ -15,7 +15,7 @@ def crear_autor(request): # Funcion Vista Crear Autor
         autor_forms = AutorForm(request.POST)
         if autor_forms.is_valid():
             autor_forms.save()
-            return redirect('libro.index')
+            return redirect('index')
     else:
         autor_forms = AutorForm()
 
