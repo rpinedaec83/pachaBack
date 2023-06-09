@@ -150,7 +150,7 @@ EMAIL_HOST="smtp.gmail.com"
 EMAIL_PORT=587
 EMAIL_USE_TLS=True
 ####################collage email id ##############
-EMAIL_HOST_USER="jhoabravo79@gmail.com"
-EMAIL_HOST_PASSWORD="salmos19leonel"
+EMAIL_HOST_USER="pruebaspachaqtec@gmail.com"
+EMAIL_HOST_PASSWORD="maaxlzpzdzoapjvw"
 
-CSRF_TRUSTED_ORIGINS = ['https://c91a-2001-1388-19e9-61f9-755f-ca47-f90c-586.ngrok-free.app']
+CSRF_TRUSTED_ORIGINS = ['https://5c44-2001-1388-19e9-eafc-b9fd-ecf7-8915-347.ngrok-free.app']
