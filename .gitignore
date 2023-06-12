@@ -137,3 +137,4 @@ instance/
 .DS_Store
 ngrok
 
+.vscode/settings.json
