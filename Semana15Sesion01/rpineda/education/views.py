@@ -14,6 +14,8 @@ from education.models import Education
 
 class EducationViewSet(mixins.ListModelMixin,
                         mixins.CreateModelMixin,
+                        mixins.UpdateModelMixin,
+                        mixins.DestroyModelMixin,
                         viewsets.GenericViewSet):
 
     serializer_class = EducationModelSerializer
