@@ -1,0 +1,22 @@
+<h1>Profesores asignados al curso "{{ curso.nombre }}"</h1>
+
+{% if profesores_asignados %}
+<ul>
+    {% for profesor in profesores_asignados %}
+    <li>{{ profesor.nombre }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No hay profesores asignados en este curso.</p>
+{% endif %}
+
+<h1>Alumnos matriculados en el curso "{{ curso.nombre }}"</h1>
+{% if alumnos_matriculados %}
+<ul>
+    {% for matricula in alumnos_matriculados %}
+    <li>{{ matricula.alumno.nombre }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No hay alumnos matriculados en este curso.</p>
+{% endif %}
