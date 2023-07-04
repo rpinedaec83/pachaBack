@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Profesores{% endblock %}
+
+{% block content %}
+<h1>Profesores del Colegio</h1>
+<a href="{% url 'contratar_profesor' %}">Contratar Profesor</a>
+
+<ul>
+    {% for profesor in profesores %}
+    <li>{{ profesor.nombre }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

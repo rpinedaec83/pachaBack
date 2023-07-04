@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Notas - {{ evaluacion.curso.nombre }} - {{ evaluacion.fecha }}</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Alumno</th>
+            <th>Valor</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for nota in notas %}
+        <tr>
+            <td>{{ nota.alumno.user.username }}</td>
+            <td>{{ nota.valor }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

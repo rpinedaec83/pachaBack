@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Tomar Asistencia - {{ curso.nombre }}</h2>
+<form method="POST">
+    {% csrf_token %}
+    {% for alumno in alumnos %}
+    <label>
+        {{ alumno.user.username }}
+        <input type="checkbox" name="asistencia_{{ alumno.id }}">
+    </label><br>
+    {% endfor %}
+    <button type="submit">Guardar Asistencia</button>
+</form>
+{% endblock %}
