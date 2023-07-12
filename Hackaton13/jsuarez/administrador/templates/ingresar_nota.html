@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Ingresar Notas - {{ evaluacion.curso.nombre }} - {{ evaluacion.fecha }}</h2>
+<form method="POST">
+    {% csrf_token %}
+    {% for alumno in alumnos %}
+    <label>
+        {{ alumno.user.username }}
+        <input type="number" name="nota_{{ alumno.id }}">
+    </label><br>
+    {% endfor %}
+    <button type="submit">Guardar Notas</button>
+</form>
+{% endblock %}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Colegio - Matricular en Curso</title>
+</head>
+<body>
+    <h1>Matricular en Curso</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Matricular</button>
+    </form>
+</body>
+</html>

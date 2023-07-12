@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Colegio - Inicio</title>
+</head>
+<body>
+    <h1>Bienvenido al Colegio</h1>
+    <a href="{% url 'alumnos' %}">Ir a Alumnos</a>
+    <a href="{% url 'profesores' %}">Ir a Profesores</a>
+    <a href="{% url 'cursos' %}">Ir a Cursos</a>
+
+
+    <h2>Cursos Libres:</h2>
+    <ul>
+        {% for curso in cursos %}
+            <li>{{ curso.nombre }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
